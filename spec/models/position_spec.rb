@@ -1,3 +1,3 @@
-RSpec.describe Menu, type: :model do
+RSpec.describe Position, type: :model do
 	pending "add some examples to (or delete) #{__FILE__}"
 end
