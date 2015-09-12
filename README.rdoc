@@ -2,11 +2,11 @@
 
 Building app:
 
-1. git clone https://github.com/kortirso/JRShop.git
-2. cd JRShop
-3. bundle install
-4. bundle exec figaro install
-5. set user and database in config/application.yml
-	SHOP_DATABASE_USERNAME: 'your_username'
-	SHOP_DATABASE_PASSWORD: 'your_password'
-6. rake db:migrate
+git clone https://github.com/kortirso/JRShop.git
+cd JRShop
+bundle install
+bundle exec figaro install
+set user and database in config/application.yml
+- SHOP_DATABASE_USERNAME: 'your_username'
+- SHOP_DATABASE_PASSWORD: 'your_password'
+rake db:migrate
