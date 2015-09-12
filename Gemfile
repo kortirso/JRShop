@@ -12,13 +12,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails', '5.2.1'
-gem 'devise'
-gem 'slim'
+gem 'haml'
 gem 'simple_form'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'pg_search'
-gem 'http_accept_language'
+gem 'kaminari'
 
 group :test do
 	gem 'rspec-rails'
