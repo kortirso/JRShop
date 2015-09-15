@@ -9,4 +9,8 @@ class ShopController < ApplicationController
 	def product
 
 	end
+
+	def event
+
+	end
 end
