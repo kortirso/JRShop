@@ -4,4 +4,6 @@ class Menu < ActiveRecord::Base
 
 	scope :main,	-> { where(upper_id: '') }
 	scope :subs,	-> (main) { where(upper_id: main) }
+
+	validates :name, :link, presence: true
 end
