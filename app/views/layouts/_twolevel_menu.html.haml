@@ -1,0 +1,8 @@
+%ul
+	- @menus.main.each do |menu_main|
+		%li= link_to "#{menu_main.name}", shop_category_path(menu_main.link)
+		- if menu_main.lowers.count > 0
+			%ul
+				- menu_main.lowers.each do |menu_sub|
+					%li
+						= link_to "#{menu_sub.name}", shop_category_path(menu_sub.link)

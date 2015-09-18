@@ -3,8 +3,9 @@ class Product < ActiveRecord::Base
 	has_many :carts, through: :positions
 	belongs_to :menu
 
-	mount_uploader :image, ImageUploader
+	#mount_uploader :image, ImageUploader
 
-	validates :name, :price, :image, :availability, presence: true
+	#validates :image, presence: true
+	validates :name, :price, :availability, :link, presence: true
 	validates :price, numericality: true
 end

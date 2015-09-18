@@ -1,2 +1,18 @@
 - provide(:title, 'Product')
-%body{class: "product"}
+%body.product
+	.container
+		.row
+			.col-xs-12
+				= render "layouts/twolevel_menu"
+		.row
+			.col-xs-6
+				%p= @product.name
+				%p
+					= "#{@product.price} руб."
+				%p= @product.caption
+				%p
+					- if @product.availability
+						%span= "Есть в наличие"
+					- else
+						%span= "Нет в наличие"
+			.col-xs-6

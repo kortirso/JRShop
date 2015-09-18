@@ -18,3 +18,12 @@ if Menu.count == 0
 	Menu.create(name: 'Оформление торжества', upper_id: menu_2.id, link: 'registraion')
 	Menu.create(name: 'Аксессуары', upper_id: menu_2.id, link: 'accessories')
 end
+
+# заполнение тестовыми товарами
+if Product.count == 0
+	Menu.all.each do |menu|
+		(1..12).each do |x|
+			Product.create(name: "Супербукет_#{x}", price: x, caption: "Супербукет_#{x}", menu_id: menu.id, availability: true, link: "#{menu.id}_#{x}")
+		end
+	end
+end

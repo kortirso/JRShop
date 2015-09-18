@@ -1,2 +1,11 @@
 - provide(:title, 'Category')
-%body{class: "category"}
+%body.category
+	.container
+		.row
+			.col-xs-12
+				= render "layouts/twolevel_menu"
+		.row
+			- @products.each do |product|
+				.col-xs-3
+					%p= link_to "#{product.name}", shop_product_path(product.link)
+					%p= "#{product.price} руб."

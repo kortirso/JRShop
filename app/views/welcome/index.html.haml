@@ -1,2 +1,6 @@
 - provide(:title, 'Home')
-%body{class: "home"}
+%body.home
+	.container
+		.row
+			.col-xs-12
+				= render "layouts/onelevel_menu"
