@@ -1,11 +1,12 @@
 - provide(:title, 'Product')
 %body.product
 	.container
+		= render "layouts/header"
 		.row
 			.col-xs-12
 				= render "layouts/twolevel_menu"
 		.row
-			.col-xs-6
+			.col-xs-6.well
 				%p= @product.name
 				%p
 					= "#{@product.price} руб."
@@ -16,3 +17,6 @@
 					- else
 						%span= "Нет в наличие"
 			.col-xs-6
+				%p Тут будет картинка
+		.row.well
+			%p Тут будет блок "С этим товаром покупают" (Вести статистику покупок)

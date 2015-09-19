@@ -1,7 +1,8 @@
 class ShopController < ApplicationController
 	include CurrentCart
 	before_action :set_cart
-	before_action :get_full_menu
+	before_action :get_full_menu, only: [:category, :product]
+	before_action :get_menu, only: [:events, :event]
 
 	def category
 		@category = Menu.where('link = ?', params[:category]).first
@@ -12,6 +13,10 @@ class ShopController < ApplicationController
 		@product = Product.where('link = ?', params[:product]).first
 	end
 
+	def events
+		@events = Event.all
+	end
+
 	def event
 		@event = Event.where('link = ?', params[:event]).first
 	end
@@ -19,5 +24,9 @@ class ShopController < ApplicationController
 	private
 		def get_full_menu
 			@menus = Menu.all
+		end
+
+		def get_menu
+			@menus = Menu.main
 		end
 end

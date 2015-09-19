@@ -1,6 +1,7 @@
 - provide(:title, 'Category')
 %body.category
 	.container
+		= render "layouts/header"
 		.row
 			.col-xs-12
 				= render "layouts/twolevel_menu"
@@ -9,3 +10,11 @@
 				.col-xs-3
 					%p= link_to "#{product.name}", shop_product_path(product.link)
 					%p= "#{product.price} руб."
+		.row.well
+			%p Почему стоит нас покупать
+			.col-xs-3
+			.col-xs-3
+			.col-xs-3
+			.col-xs-3
+		.row.well
+			%p Простой текстовый блок

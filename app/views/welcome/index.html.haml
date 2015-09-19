@@ -1,6 +1,21 @@
 - provide(:title, 'Home')
 %body.home
 	.container
+		= render "layouts/header"
 		.row
 			.col-xs-12
 				= render "layouts/onelevel_menu"
+		.row.well
+			%p Блок для сезонных распродаж
+		.row.well
+			%p Блок для пары акций
+		.row.well
+			%p Хиты продаж (Брать данные по продажам вчерашнего дня? Вести статистику?)
+		.row.well
+			%p Почему стоит нас покупать
+			.col-xs-3
+			.col-xs-3
+			.col-xs-3
+			.col-xs-3
+		.row.well
+			%p Простой текстовый блок
