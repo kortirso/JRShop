@@ -10,6 +10,7 @@
 				.col-xs-3
 					%p= link_to "#{product.name}", shop_product_path(product.link)
 					%p= "#{product.price} руб."
+					%p= button_to "Купить", positions_path(product_id: product.id), class: "btn btn-success", remote: true
 		.row.well
 			%p Почему стоит нас покупать
 			.col-xs-3

@@ -2,6 +2,15 @@ Rails.application.routes.draw do
 
 	resources :products, :events
 
+	post 'positions/create' => 'positions#create', as: 'positions'
+	delete 'positions' => 'positions#drop', as: 'positions_destroy'
+	scope controller: :carts do
+		get 'carts/:id' => :show, as: 'cart'
+		delete 'carts/:id' => :destroy
+		post 'plus/:position' => :product_plus, as: 'plus'
+		post 'minus/:position' => :product_minus, as: 'minus'
+	end
+
 	scope path: '/about', controller: :about do
 		get 'cash' => :cash, as: 'about_cash'
 		get 'contacts' => :contacts, as: 'about_contacts'

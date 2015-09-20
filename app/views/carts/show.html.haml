@@ -1,0 +1,38 @@
+- provide(:title, 'Корзина')
+%body.cart
+	.container
+		= render "layouts/header"
+		.row
+			.col-xs-12
+				= render "layouts/onelevel_menu"
+		- if @current_cart.positions.count > 0
+			.row
+				%p Оформление заказа
+			.row
+				.col-xs-12
+					- @current_cart.positions.each do |position|
+						.row{id: "row_#{position.id}"}
+							.col-xs-2
+								%p Картинка
+							.col-xs-3
+								%p= position.product.name
+							.col-xs-3
+								%p Опции при заказе товара
+							.col-xs-1{id: "count_#{position.id}"}
+								%p= position.count
+								#minus= button_to "-", minus_path(position), class: "btn", remote: true
+								#plus= button_to "+", plus_path(position), class: "btn", remote: true
+							.col-xs-2{id: "summ_#{position.id}"}
+								%p= position.count * position.product.price
+							.col-xs-1
+								%p= button_to "X", positions_destroy_path(position_id: position.id), class: "btn btn-danger", method: :delete
+			.row
+				.col-xs-12#total_summ
+					%p.pull-right= "Итого #{@current_cart.summ} руб."
+			.row.well
+				%p Блок для продолжения заказа
+			.row.well
+				%p Обычно покупают (Определиться с типом рассчета)
+		- else
+			.row
+				%p Кoрзина пустая
