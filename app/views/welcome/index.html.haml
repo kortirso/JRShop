@@ -1,6 +1,10 @@
 - provide(:title, 'Home')
 %body.home
 	.container
+		- if current_manager
+			%p= current_manager.email
+			%p
+				= link_to "Выйти", destroy_manager_session_path, method: :delete, class: 'btn btn-warning'
 		= render "layouts/header"
 		.row
 			.col-xs-12

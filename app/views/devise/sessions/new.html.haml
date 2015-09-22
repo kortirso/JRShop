@@ -1,0 +1,11 @@
+.container
+	.row
+		.col-xs-12
+			%h2 Авторизация
+			= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+				.col-sm-4= f.input :email, required: true, autofocus: true, label: 'Электронная почта'
+				.clearfix
+				.col-sm-4= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @validatable), label: 'Пароль'
+				.clearfix
+				%div= f.input :remember_me, as: :boolean, label: 'Запомнить' if devise_mapping.rememberable?
+				%div= f.button :submit, "Вход", class: 'btn btn-small btn-success'

@@ -27,3 +27,7 @@ if Product.count == 0
 		end
 	end
 end
+
+if Manager.count == 0
+	Manager.create(email: 'tester@tester.com', password: 'Tester85')
+end

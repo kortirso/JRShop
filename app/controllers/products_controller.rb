@@ -1,5 +1,6 @@
-class ProductController < ApplicationController
+class ProductsController < ApplicationController
 	before_action :set_product, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_manager!
 
 	def index
 		@products = Product.all
@@ -18,6 +19,7 @@ class ProductController < ApplicationController
 	def create
 		@product = Product.new(product_params)
 		respond_to do |format|
+			if @product.save
 				format.html {}
 			else
 				format.html {}

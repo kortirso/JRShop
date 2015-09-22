@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+	devise_for :managers
 	resources :products, :events
 
 	post 'positions/create' => 'positions#create', as: 'positions'
@@ -23,9 +24,9 @@ Rails.application.routes.draw do
 		get 'event/all' => :events, as: 'shop_events'
 		get 'event/:event' => :event, as: 'shop_event'
 		get 'product/:product' => :product, as: 'shop_product'
-		get ':category' => :category, as: 'shop_category'
+		get 'category/:category' => :category, as: 'shop_category'
 	end
 
-	root to: 'welcome#index', as: 'welcome'
+	root to: 'welcome#index'
 	match "*path", to: "application#catch_404", via: :all
 end

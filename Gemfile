@@ -9,6 +9,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+gem 'devise'
 gem 'figaro'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails', '5.2.1'

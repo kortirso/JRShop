@@ -1,5 +1,6 @@
-class EventController < ApplicationController
+class EventsController < ApplicationController
 	before_action :set_event, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_manager!
 
 	def index
 		@events = Event.all
@@ -18,6 +19,7 @@ class EventController < ApplicationController
 	def create
 		@event = Event.new(event_params)
 		respond_to do |format|
+			if @event.save
 				format.html {}
 			else
 				format.html {}
