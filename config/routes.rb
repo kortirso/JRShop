@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
 	devise_for :managers
+
 	resources :products, :events
+
+	get 'admin_block' => 'admin#index', as: 'admin'
 
 	post 'positions/create' => 'positions#create', as: 'positions'
 	delete 'positions' => 'positions#drop', as: 'positions_destroy'
