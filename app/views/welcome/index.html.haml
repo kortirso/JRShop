@@ -4,6 +4,7 @@
 		- if current_manager
 			%p= current_manager.email
 			%p
+				= link_to "Управление", admin_path, class: 'btn btn-primary'
 				= link_to "Выйти", destroy_manager_session_path, method: :delete, class: 'btn btn-warning'
 		= render "layouts/header"
 		.row

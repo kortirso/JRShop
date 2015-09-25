@@ -1,0 +1,6 @@
+- provide(:title, 'Новый товар')
+%body.product_new
+	.container
+		= render "form"
+		%br
+		= link_to 'Назад', products_path, class: 'btn btn-primary'

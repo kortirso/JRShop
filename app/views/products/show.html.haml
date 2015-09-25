@@ -1,3 +1,26 @@
 - provide(:title, 'Продукт')
 %body.product
 	.container
+		.row
+			.col-xs-12
+				%h1 Просмотр товара
+				%p
+					%strong Название
+					= @product.name
+				%p
+					%strong Цена
+					= @product.price
+				%p
+					%strong Наличие
+					= @product.availability
+				%p
+					%strong Ссылка
+					= @product.link
+				%p
+					%strong Изображения
+					= image_tag @product.image, class: "img-responsive", alt: "Фото товара"
+				%p
+					%strong Категория
+					= @product.menu.name
+				= link_to 'Редактировать', edit_product_path(@product), class: 'btn btn-primary'
+				= link_to 'Назад', products_path, class: 'btn btn-primary'
