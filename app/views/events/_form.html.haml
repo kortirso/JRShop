@@ -1,0 +1,19 @@
+.row
+	.col-xs-12
+		%h1 Новая акция
+		= simple_form_for @event do |f|
+			.col-xs-8.col-md-4
+				= f.input :name, label: 'Название', placeholder: 'Название акции'
+			.clearfix
+			.col-xs-4
+				= f.input :caption, label: 'Описание', placeholder: 'Описание'
+			.clearfix
+			.col-xs-8.col-md-4
+				= f.input :link, label: 'Ссылка', placeholder: 'Название на английском для адресной строки'
+			.clearfix
+			.col-xs-12
+				%h4 Изображение для акции
+				%p= f.file_field :image
+			.col-xs-12
+				.actions
+					= f.button :submit, class: "btn btn-success", value: 'Создать акцию'

@@ -18,8 +18,8 @@
 				= f.association :menu, label: 'Категория', label_method: :name, value_method: :id, include_blank: false
 			.clearfix
 			.col-xs-12
-				%h4 Изображение для рецепта
+				%h4 Изображение для товара
 				%p= f.file_field :image
 			.col-xs-12
 				.actions
-					= f.button :submit, class: "btn btn-success", value: 'Создать рецепт'
+					= f.button :submit, class: "btn btn-success", value: 'Создать товар'

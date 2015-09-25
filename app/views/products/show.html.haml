@@ -1,4 +1,4 @@
-- provide(:title, 'Продукт')
+- provide(:title, 'Товар')
 %body.product
 	.container
 		.row
@@ -18,7 +18,7 @@
 					= @product.link
 				%p
 					%strong Изображения
-					= image_tag @product.image, class: "img-responsive", alt: "Фото товара"
+					= image_tag @product.image.medium, class: 'img-responsive', alt: 'Фото товара'
 				%p
 					%strong Категория
 					= @product.menu.name

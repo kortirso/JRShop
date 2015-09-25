@@ -1,3 +1,32 @@
 - provide(:title, 'Все акции')
 %body.events
 	.container
+		.row
+			.col-xs-12
+				%h1 Все акции
+				= link_to 'Новая акция', new_event_path, class: 'btn btn-primary'
+		.row
+			.col-xs-12
+				.table-responsive
+					%table.table.table-striped
+						%thead
+							%tr
+								%th ID
+								%th Название
+								%th Описание
+								%th Ссылка
+								%th Изображение
+								%th
+								%th
+								%th
+						%tbody
+							- @events.each do |event|
+								%tr
+									%td= event.id
+									%td= event.name
+									%td= event.caption
+									%td= event.link
+									%td= event.image.small
+									%td= link_to 'Посмотреть', event_path(event), class: 'btn btn-primary'
+									%td= link_to 'Изменить', edit_event_path(event), class: 'btn btn-primary'
+									%td= link_to 'Удалить', event_path(event), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger'
