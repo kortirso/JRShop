@@ -1,17 +1,20 @@
 .row
 	.col-xs-12
-		%ul
+		%ul.top_menu
 			%li= link_to "Доставка", about_delivery_path
 			%li= link_to "Оплата", about_cash_path
 			%li= link_to "Отзывы", about_responces_path
 			%li= link_to "Акции", shop_events_path
 			%li= link_to "О нас", about_path
 			%li= link_to "Контакты", about_contacts_path
-.row
-	.col-xs-4.well
-		%p Поле для обратной связи
-	.col-xs-4.well
-		%p Место для логотипа
-	.col-xs-4.well
-		%p Место для обратного звонка
+.row#header
+	.col-xs-2.block
+		%p +7900 55-55-55
+		%p Чкалова, 1
+		%p Камова, 1
+	.col-xs-4.col-xs-offset-2.block#logo_block
+		%p#logo Камелия
+		%p Салон цветов
+	.col-xs-2.col-xs-offset-2
+		%p#back_call Обратный звонок
 		%p= render "carts/cart_block"

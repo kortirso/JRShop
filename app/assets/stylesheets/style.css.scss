@@ -1,0 +1,78 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,400italic,500,500italic&subset=latin,cyrillic);
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic&subset=latin,cyrillic);
+
+* {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 16px;
+	color: #000;
+}
+
+ul.top_menu {
+	list-style: none;
+	padding: 0;
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+
+	li {
+		display: inline-block;
+		padding: 0 8px 0 5px;
+		border-right: 2px solid #000;
+
+		a {
+			color: #009e11;
+			text-decoration: underline;
+			font-family: 'Ubuntu', sans-serif;
+		}
+	}
+
+	li:last-child {
+		border-right: 0;
+	}
+}
+
+#header {
+	margin: 20px 0;
+
+	.block {
+		background: #93c47d;
+		border-radius: 20px;
+		border: 2px solid #000;
+		text-align: center;
+		padding: 10px 0 0;
+
+		p {
+			font-family: 'Ubuntu', sans-serif;
+			font-weight: 500;
+		}
+
+		a {
+			font-family: 'Ubuntu', sans-serif;
+			color: #000;
+			text-decoration: none;
+			font-weight: 500;
+
+			&:hover {
+				color: #000;
+				text-decoration: none;
+			}
+		}
+	}
+
+	#logo_block {
+		padding: 20px 30px;
+		top: -10px;
+
+		#logo {
+			font-size: 30px;
+		}
+	}
+
+	#back_call {
+		background: #93c47d;
+		border: 2px solid #000;
+		text-align: center;
+		box-shadow: 3px 3px 5px #000;
+		font-size: 12px;
+	}
+}
