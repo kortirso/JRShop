@@ -4,12 +4,12 @@
 		- if current_manager
 			%p= current_manager.email
 			%p
-				= link_to "Управление", admin_path, class: 'btn btn-primary'
-				= link_to "Выйти", destroy_manager_session_path, method: :delete, class: 'btn btn-warning'
-		= render "layouts/header"
+				= link_to 'Управление', admin_path, class: 'btn btn-primary'
+				= link_to 'Выйти', destroy_manager_session_path, method: :delete, class: 'btn btn-warning'
+		= render 'layouts/header'
 		.row
 			.col-xs-12
-				= render "layouts/onelevel_menu"
+				= render 'layouts/onelevel_menu'
 		.row
 			%h2 Летние предложения (сезонные продажи)
 			%p Блок для сезонных распродаж
@@ -30,21 +30,4 @@
 					- else
 						= image_tag sell.image.medium, class: 'img img-responsive'
 					= link_to sell.name, shop_product_path(sell.link), class: 'link_black'
-		.row.advantages
-			%h2 Почему стоит покупать у нас
-			.col-xs-3
-				= image_tag 'advantage.png', class: 'img img-responsive'
-				%p Причина
-			.col-xs-3
-				= image_tag 'advantage.png', class: 'img img-responsive'
-				%p Причина
-			.col-xs-3
-				= image_tag 'advantage.png', class: 'img img-responsive'
-				%p Причина
-			.col-xs-3
-				= image_tag 'advantage.png', class: 'img img-responsive'
-				%p Причина
-		.row
-			.col-xs-12
-				%h2 Интернет-магазин цветов
-				%p.simple_block Покупку букета или композиции мы сделаем для Вас наиболее простой и удобной: Вы можете заказать в каталоге онлайн или позвонив по телефону оператора. Букет будет выполнен нашими флористами точь-в-точь таким же, каким он представлен на фотографии, либо он будет собран индивидуально, в соответствии в Вашими личными пожеланиями. Высокое качество букетов на заказ могут подтвердить тысячи наших клиентов.
+		= render 'layouts/bottom'

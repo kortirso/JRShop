@@ -114,13 +114,13 @@ a.link_black {
 		background: #93c47d;
 		border: 2px solid #000;
 		text-align: center;
-		box-shadow: 3px 3px 5px #000;
+		box-shadow: 2px 2px 4px #000;
 		font-size: 12px;
 	}
 }
 
-.tops_block {
-	margin: 0 auto 15px;
+.tops_block, .products_block {
+	margin: 0 auto 25px;
 
 	.empty_img {
 		width: 150px;
@@ -135,6 +135,30 @@ a.link_black {
 		display: block;
 		text-align: center;
 		margin: 5px 0;
+	}
+}
+
+.products_block {
+	text-align: center;
+
+	.btn {
+		padding: 4px 20px;
+		background: #ff9900;
+		border-radius: 0;
+		border: 2px solid #000;
+		color: #000;
+		box-shadow: 2px 2px 4px #000;
+		font-weight: 600;
+
+		&:hover, &:focus {
+			background: #ff9900;
+			border: 2px solid #000;
+			color: #000;
+		}
+	}
+
+	p {
+		font-weight: 600;
 	}
 }
 

@@ -1,21 +1,18 @@
 - provide(:title, 'Category')
 %body.category
 	.container
-		= render "layouts/header"
+		= render 'layouts/header'
 		.row
 			.col-xs-12
-				= render "layouts/twolevel_menu"
+				= render 'layouts/twolevel_menu'
 		.row
 			- @products.each do |product|
-				.col-xs-3
-					%p= link_to "#{product.name}", shop_product_path(product.link)
+				.col-xs-3.products_block
+					- if product.image.blank?
+						.empty_img
+					- else
+						= image_tag product.image.medium, class: 'img img-responsive'
+					%p= link_to "#{product.name}", shop_product_path(product.link), class: 'link_black'
 					%p= "#{product.price} руб."
-					%p= button_to "Купить", positions_path(product_id: product.id), class: "btn btn-success", remote: true
-		.row.well
-			%p Почему стоит нас покупать
-			.col-xs-3
-			.col-xs-3
-			.col-xs-3
-			.col-xs-3
-		.row.well
-			%p Простой текстовый блок
+					= button_to 'Купить', positions_path(product_id: product.id), class: 'btn btn-success', remote: true
+		= render 'layouts/bottom'
