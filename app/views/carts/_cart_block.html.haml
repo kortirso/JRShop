@@ -1,3 +1,3 @@
 .block
 	%p Корзина
-	%p= link_to "Товаров - #{@cart.positions.count}", cart_path(session[:cart_id]), id: "cart"
+	%p= link_to "Товаров - #{@cart.positions.count}", cart_path(session[:cart_id]), id: "cart", class: 'link_black'

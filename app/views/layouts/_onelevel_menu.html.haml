@@ -1,3 +1,5 @@
-%ul
+%ul#one_level
 	- @menus.each do |menu|
-		%li= link_to "#{menu.name}", shop_category_path(menu.link)
+		%li
+			.color_block
+			= link_to "#{menu.name}", shop_category_path(menu.link), class: 'link_black'

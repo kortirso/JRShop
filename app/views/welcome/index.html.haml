@@ -10,17 +10,41 @@
 		.row
 			.col-xs-12
 				= render "layouts/onelevel_menu"
-		.row.well
+		.row
+			%h2 Летние предложения (сезонные продажи)
 			%p Блок для сезонных распродаж
-		.row.well
-			%p Блок для пары акций
-		.row.well
-			%p Хиты продаж (Брать данные по продажам вчерашнего дня? Вести статистику?)
-		.row.well
-			%p Почему стоит нас покупать
+		.row
+			- @events.each do |event|
+				.col-xs-6
+					.col-xs-4
+						= image_tag event.image.medium, class: 'img img-responsive'
+					.col-xs-8
+						%p= event.name
+						%p= event.caption
+		.row
+			%h2 Хиты продаж
+			- @tops.each do |sell|
+				.col-xs-3.tops_block
+					- if sell.image.blank?
+						.empty_img
+					- else
+						= image_tag sell.image.medium, class: 'img img-responsive'
+					= link_to sell.name, shop_product_path(sell.link), class: 'link_black'
+		.row.advantages
+			%h2 Почему стоит покупать у нас
 			.col-xs-3
+				= image_tag 'advantage.png', class: 'img img-responsive'
+				%p Причина
 			.col-xs-3
+				= image_tag 'advantage.png', class: 'img img-responsive'
+				%p Причина
 			.col-xs-3
+				= image_tag 'advantage.png', class: 'img img-responsive'
+				%p Причина
 			.col-xs-3
-		.row.well
-			%p Простой текстовый блок
+				= image_tag 'advantage.png', class: 'img img-responsive'
+				%p Причина
+		.row
+			.col-xs-12
+				%h2 Интернет-магазин цветов
+				%p.simple_block Покупку букета или композиции мы сделаем для Вас наиболее простой и удобной: Вы можете заказать в каталоге онлайн или позвонив по телефону оператора. Букет будет выполнен нашими флористами точь-в-точь таким же, каким он представлен на фотографии, либо он будет собран индивидуально, в соответствии в Вашими личными пожеланиями. Высокое качество букетов на заказ могут подтвердить тысячи наших клиентов.

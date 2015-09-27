@@ -4,5 +4,7 @@ class WelcomeController < ApplicationController
 
 	def index
 		@menus = Menu.main
+		@events = Event.order(id: :desc).limit(2)
+		@tops = Product.top_sells
 	end
 end

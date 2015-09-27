@@ -8,13 +8,13 @@
 			%li= link_to "О нас", about_path
 			%li= link_to "Контакты", about_contacts_path
 .row#header
-	.col-xs-2.block
+	.col-xs-3.col-md-2.block
 		%p +7900 55-55-55
 		%p Чкалова, 1
 		%p Камова, 1
-	.col-xs-4.col-xs-offset-2.block#logo_block
+	.col-xs-4.col-xs-offset-1.col-md-offset-2.block#logo_block
 		%p#logo Камелия
 		%p Салон цветов
-	.col-xs-2.col-xs-offset-2
+	.col-xs-3.col-md-2.col-xs-offset-1.col-md-offset-2.without
 		%p#back_call Обратный звонок
 		%p= render "carts/cart_block"
