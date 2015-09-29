@@ -20,9 +20,9 @@ class EventsController < ApplicationController
 		@event = Event.new(event_params)
 		respond_to do |format|
 			if @event.save
-				format.html {}
+				format.html { redirect_to @event }
 			else
-				format.html {}
+				format.html { render :new }
 			end
 		end
 	end
@@ -30,9 +30,9 @@ class EventsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @event.update(event_params)
-				format.html {}
+				format.html { redirect_to @event }
 			else
-				format.html {}
+				format.html { render :edit }
 			end
 		end
 	end
@@ -40,7 +40,7 @@ class EventsController < ApplicationController
 	def destroy
 		@event.destroy
 		respond_to do |format|
-			format.html {}
+			format.html { redirect_to events_path }
 		end
 	end
 
