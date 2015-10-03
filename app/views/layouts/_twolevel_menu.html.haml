@@ -1,12 +1,13 @@
-%ul.menus#two_level
-	- @menus.each do |menu_main|
-		- if menu_main == @active
-			%li.active= link_to "#{menu_main.name}", shop_category_path(menu_main.link), class: 'link_black'
-		- else
-			%li= link_to "#{menu_main.name}", shop_category_path(menu_main.link), class: 'link_black'
-- if @active.lowers.count > 0
-	%ul.menus#second_level
-		- @active.lowers.each do |menu_sub|
-			%li
-				.color_block
-				= link_to "#{menu_sub.name}", sub_shop_category_path(@active.link, menu_sub.link), class: 'link_black'
+.col-xs-12.back_menu
+	%ul.menus#two_level
+		- @menus.each do |menu_main|
+			- if menu_main == @active
+				%li.active= link_to "#{menu_main.name}", shop_category_path(menu_main.link), class: 'link_black'
+			- else
+				%li= link_to "#{menu_main.name}", shop_category_path(menu_main.link), class: 'link_black'
+	- if @active.lowers.count > 0
+		%ul.menus#second_level
+			- @active.lowers.each do |menu_sub|
+				%li
+					.color_block
+					= link_to "#{menu_sub.name}", sub_shop_category_path(@active.link, menu_sub.link), class: 'link_black'

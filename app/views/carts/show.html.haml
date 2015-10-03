@@ -3,8 +3,7 @@
 	.container
 		= render "layouts/header"
 		.row
-			.col-xs-12
-				= render "layouts/onelevel_menu"
+			= render "layouts/onelevel_menu"
 		- if @current_cart.positions.count > 0
 			.row
 				%p Оформление заказа

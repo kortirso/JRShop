@@ -42,12 +42,17 @@ body {
 	}
 }
 
+.back_menu {
+	background: #fffff3;
+	box-shadow: inset 0 0 60px 15px #fff2ba;
+	border-bottom: 4px solid #54a642;
+}
+
 ul.menus {
 	list-style: none;
 	margin-bottom: 25px;
 	padding: 0;
 	text-align: center;
-	width: 100%;
 
 	li {
 		display: inline-block;
@@ -84,6 +89,9 @@ ul.top_menu {
 }
 
 ul#one_level {
+	margin: 0 -15px;
+	padding: 30px 0 5px;
+
 	li {
 		width: 12%;
 		min-width: 130px;
@@ -141,7 +149,7 @@ a.link_black {
 }
 
 #header {
-	margin: 20px 0;
+	margin: 20px 0 0;
 
 	#left_block {
 		text-align: center;

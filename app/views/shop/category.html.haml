@@ -3,8 +3,7 @@
 	.container
 		= render 'layouts/header'
 		.row
-			.col-xs-12
-				= render 'layouts/twolevel_menu'
+			= render 'layouts/twolevel_menu'
 		.row
 			- @products.each do |product|
 				.col-xs-3.products_block
