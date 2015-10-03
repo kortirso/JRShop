@@ -17,6 +17,26 @@ body {
 	}
 }
 
+ul.menus {
+	list-style: none;
+	margin-bottom: 25px;
+	padding: 0;
+	text-align: center;
+	width: 100%;
+
+	li {
+		display: inline-block;
+		padding: 0;
+
+		a {
+			display: block;
+			text-align: center;
+			padding: 15px 0;
+			font-size: 11px;
+		}
+	}
+}
+
 ul.top_menu {
 	list-style: none;
 	padding: 0;
@@ -42,29 +62,47 @@ ul.top_menu {
 }
 
 ul#one_level {
-	list-style: none;
-	padding: 0;
-
 	li {
-		display: inline-block;
-		padding: 0;
 		width: 12%;
 		min-width: 130px;
 
-		a {
-			display: block;
-			text-align: center;
-			margin: 5px 0;
-			font-size: 11px;
+		.color_block {
+			width: 90px;
+			height: 90px;
+			margin: 0 auto;
+			border-radius: 50%;
+			border: 2px solid #000;
 		}
 	}
+}
 
-	.color_block {
-		width: 90px;
-		height: 90px;
-		margin: 0 auto;
-		border-radius: 50%;
-		border: 2px solid #000;
+ul#two_level {
+	border: 2px solid #000;
+
+	li {
+		margin: 0 -4px 0 0;
+		width: 12%;
+		min-width: 140px;
+
+		&.active {
+			background: #95bcf2;
+		}
+	}
+}
+
+ul#second_level {
+	border-bottom: 2px solid #000;
+
+	li {
+		width: 24%;
+
+		.color_block {
+			width: 150px;
+			height: 150px;
+			margin: 0 auto;
+			border-radius: 50%;
+			border: 3px solid #000;
+		}
 	}
 }
 

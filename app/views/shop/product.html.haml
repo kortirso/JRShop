@@ -13,9 +13,9 @@
 				%p= @product.caption
 				%p
 					- if @product.availability
-						%span= "Есть в наличие"
+						%span.have= "Есть в наличие"
 					- else
-						%span= "Нет в наличие"
+						%span.havenot= "Нет в наличие"
 			.col-xs-6
 				%p Тут будет картинка
 		.row.well

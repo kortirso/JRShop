@@ -28,6 +28,7 @@ Rails.application.routes.draw do
 		get 'event/:event' => :event, as: 'shop_event'
 		get 'product/:product' => :product, as: 'shop_product'
 		get 'category/:category' => :category, as: 'shop_category'
+		get 'category/:category/:sub' => :category, as: 'sub_shop_category'
 	end
 
 	root to: 'welcome#index'
