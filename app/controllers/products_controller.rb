@@ -20,9 +20,9 @@ class ProductsController < ApplicationController
 		@product = Product.new(product_params)
 		respond_to do |format|
 			if @product.save
-				format.html {}
+				format.html { redirect_to @product }
 			else
-				format.html {}
+				format.html { render :new}
 			end
 		end
 	end
@@ -30,9 +30,9 @@ class ProductsController < ApplicationController
 	def update
 		respond_to do |format|
 			if @product.update(product_params)
-				format.html {}
+				format.html { redirect_to @product }
 			else
-				format.html {}
+				format.html { render :edit}
 			end
 		end
 	end
@@ -40,7 +40,7 @@ class ProductsController < ApplicationController
 	def destroy
 		@product.destroy
 		respond_to do |format|
-			format.html {}
+			format.html { redirect_to products_path}
 		end
 	end
 
