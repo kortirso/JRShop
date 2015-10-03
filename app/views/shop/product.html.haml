@@ -5,18 +5,31 @@
 		.row
 			.col-xs-12
 				= render "layouts/twolevel_menu"
-		.row
+		.row.caption
 			.col-xs-6
 				%h3= @product.name
-				%p
+				%p.price_block
 					= "#{@product.price} руб."
+					= button_to 'Купить', positions_path(product_id: @product.id), class: 'btn btn-success', remote: true
 				%p= @product.caption
 				%p
 					- if @product.availability
 						%span.have= "Есть в наличие"
 					- else
 						%span.havenot= "Нет в наличие"
-			.col-xs-6
-				%p Тут будет картинка
-		.row.well
-			%p Тут будет блок "С этим товаром покупают" (Вести статистику покупок)
+			.col-xs-6.product_block
+				- if @product.image.blank?
+					.empty_img
+				- else
+					= image_tag @product.image.medium, class: 'img img-responsive'
+		.row.buy_with
+			%h2 С этим товаром покупают
+			- @buy_with.each do |sell|
+				.col-xs-3.tops_block
+					- if sell.image.blank?
+						.empty_img
+					- else
+						= image_tag sell.image.medium, class: 'img img-responsive'
+					= link_to sell.name, shop_product_path(sell.link), class: 'link_black'
+					%p= "#{sell.price} руб."
+					= button_to 'Купить', positions_path(product_id: sell.id), class: 'btn btn-success', remote: true

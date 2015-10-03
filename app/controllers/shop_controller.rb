@@ -12,6 +12,7 @@ class ShopController < ApplicationController
 	def product
 		@product = Product.where('link = ?', params[:product]).first
 		@active = @product.menu
+		@buy_with = Product.buy_with
 	end
 
 	def events

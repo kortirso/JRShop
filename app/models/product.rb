@@ -14,6 +14,12 @@ class Product < ActiveRecord::Base
 
 	private
 		def self.top_sells
-			tops = Product.with_sells.count >= 8 ? tops = Product.with_sells.order(sells: :desc).limit(8) : tops = Product.all.sample(8)
+			tops = Product.with_sells.count >= 8 ? Product.with_sells.order(sells: :desc).limit(8) : Product.all.sample(8)
+		end
+
+		def self.buy_with
+			# Пока берутся 4 случайных товара
+			# В перспективе внедрить расчет
+			buy_with = Product.all.sample(4)
 		end
 end
