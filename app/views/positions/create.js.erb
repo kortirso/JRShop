@@ -1,1 +1,2 @@
-$('#cart').text("Товаров - <%= @cart.positions.count %>");
+$('#cart_count').text("Товаров: <%= @cart.positions.count %>");
+$('#cart_summ').text("Сумма: <%= @cart.summ %> руб.");

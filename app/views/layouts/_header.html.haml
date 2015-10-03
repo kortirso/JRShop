@@ -1,20 +1,25 @@
-.row
-	.col-xs-12
-		%ul.top_menu
-			%li= link_to "Доставка", about_delivery_path
-			%li= link_to "Оплата", about_cash_path
-			%li= link_to "Отзывы", about_responces_path
-			%li= link_to "Акции", shop_events_path
-			%li= link_to "О нас", about_path
-			%li= link_to "Контакты", about_contacts_path
-.row#header
-	.col-xs-3.col-md-2.block
-		%p +7900 55-55-55
-		%p Чкалова, 1
-		%p Камова, 1
-	.col-xs-4.col-xs-offset-1.col-md-offset-2.block#logo_block
-		%p#logo Камелия
-		%p Салон цветов
-	.col-xs-3.col-md-2.col-xs-offset-1.col-md-offset-2.without
-		%p#back_call Обратный звонок
-		%p= render "carts/cart_block"
+%header
+	.row
+		.col-xs-12
+			%ul.top_menu
+				%li= link_to "Доставка", about_delivery_path
+				%li= link_to "Оплата", about_cash_path
+				%li= link_to "Отзывы", about_responces_path
+				%li= link_to "Акции", shop_events_path
+				%li= link_to "О нас", about_path
+				%li= link_to "Контакты", about_contacts_path
+	.row#header
+		.col-xs-4#left_block
+			.phone
+				%p.yellow единая справочная
+				%p
+					8 (3012)
+					%span 25-92-38
+			.address
+				%p ул. Чкалова, 9, ул. Камова, 25
+				%p.yellow посмотреть на карте
+		.col-xs-4#logo_block
+			= image_tag 'logo.png', class: 'img-responsive'
+		.col-xs-3.col-xs-offset-1.without
+			%p#back_call Обратный звонок
+			%p= render "carts/cart_block"

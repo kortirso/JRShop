@@ -1,3 +1,7 @@
-.block
-	%p Корзина
-	%p= link_to "Товаров - #{@cart.positions.count}", cart_path(session[:cart_id]), id: "cart", class: 'link_black'
+.col-xs-4#cart_image
+	= image_tag 'cart.png', class: 'img-responsive'
+.col-xs-8#cart_block
+	%h4 Корзина
+	%p#cart_count= "Товаров: #{@cart.positions.count}"
+	%p#cart_summ= "Сумма: #{@cart.summ} руб."
+	%p= link_to 'оформить заказ', cart_path(session[:cart_id]), class: 'yellow'
