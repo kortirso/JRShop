@@ -27,7 +27,7 @@ class CartsController < ApplicationController
 	def product_plus
 		@position = Position.where("id = ?", params[:position]).first
 		@position.update_attribute('count', @position.count + 1)
-		@total_summ = calc_summ(@position.cart)
+		@position.cart.calc_summ
 		respond_to do |format|
 			format.js
 		end
@@ -37,7 +37,7 @@ class CartsController < ApplicationController
 		@position = Position.where("id = ?", params[:position]).first
 		if @position.count > 1
 			@position.update_attribute('count', @position.count - 1)
-			@total_summ = calc_summ(@position.cart)
+			@position.cart.calc_summ
 		end
 		respond_to do |format|
 			format.js
@@ -47,14 +47,5 @@ class CartsController < ApplicationController
 	private
 		def set_carts
 			@current_cart = Cart.where('id = ?', params[:id]).first
-		end
-
-		def calc_summ(cart)
-			cart.summ = 0
-			cart.positions.each do |position|
-				cart.summ += position.count * position.product.price
-			end
-			cart.save!
-			cart.summ
 		end
 end
