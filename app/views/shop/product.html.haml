@@ -24,11 +24,12 @@
 		.row.buy_with
 			%h2 С этим товаром покупают
 			- @buy_with.each do |sell|
-				.col-xs-3.tops_block
-					- if sell.image.blank?
-						.empty_img
-					- else
-						= image_tag sell.image.medium, class: 'img img-responsive'
-					= link_to sell.name, shop_product_path(sell.link), class: 'link_black'
-					%p= "#{sell.price} руб."
-					= button_to 'Купить', positions_path(product_id: sell.id), class: 'btn btn-success', remote: true
+				.col-xs-3
+					.tops_block
+						- if sell.image.blank?
+							.empty_img
+						- else
+							= image_tag sell.image.medium, class: 'img img-responsive'
+						= link_to sell.name, shop_product_path(sell.link), class: 'link_black'
+						%p= "#{sell.price} руб."
+						= button_to 'Купить', positions_path(product_id: sell.id), class: 'btn btn-success', remote: true

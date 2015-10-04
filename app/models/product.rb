@@ -7,8 +7,7 @@ class Product < ActiveRecord::Base
 
 	scope :with_sells,	-> { where('sells > 0') }
 
-	#validates :image, presence: true
-	validates :name, :price, :caption, :availability, :link, :sells, :season, :menu_id, presence: true
+	validates :name, :price, :caption, :availability, :link, :sells, :menu_id, presence: true
 	validates :price, :sells, numericality: true
 	validates :link, uniqueness: true
 

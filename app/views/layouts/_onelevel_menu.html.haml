@@ -3,4 +3,5 @@
 		- @menus.each do |menu|
 			%li
 				.color_block
+					= image_tag "#{menu.image}", class: 'img-responsive'
 				= link_to "#{menu.name}", shop_category_path(menu.link), class: 'link_black'

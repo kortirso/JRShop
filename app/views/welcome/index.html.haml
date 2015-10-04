@@ -15,18 +15,25 @@
 		.row
 			- @events.each do |event|
 				.col-xs-6
-					.col-xs-4
-						= image_tag event.image.medium, class: 'img img-responsive'
-					.col-xs-8
-						%p= event.name
-						%p= event.caption
+					.eventing
+						.col-xs-4
+							- if event.image.blank?
+								= image_tag 'empty-event.jpg', class: 'img img-responsive'
+							- else
+								= image_tag event.image.medium, class: 'img img-responsive'
+						.col-xs-8
+							%h2= link_to event.name, shop_event_path(event.link)
+							%p= event.caption
 		.row
 			%h2 Хиты продаж
 			- @tops.each do |sell|
-				.col-xs-3.tops_block
-					- if sell.image.blank?
-						.empty_img
-					- else
-						= image_tag sell.image.medium, class: 'img img-responsive'
-					= link_to sell.name, shop_product_path(sell.link), class: 'link_black'
+				.col-xs-3
+					.tops_block
+						- if sell.image.blank?
+							.empty_img
+						- else
+							= image_tag sell.image.medium, class: 'img img-responsive'
+						= link_to sell.name, shop_product_path(sell.link), class: 'link_black'
+						%p= "#{sell.price} руб."
+						= button_to 'Купить', positions_path(product_id: sell.id), class: 'btn btn-success', remote: true
 		= render 'layouts/bottom'
