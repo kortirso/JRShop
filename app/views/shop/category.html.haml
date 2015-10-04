@@ -12,7 +12,7 @@
 						- if product.image.blank?
 							.empty_img
 						- else
-							= image_tag product.image.medium, class: 'img img-responsive'
+							= image_tag product.image.medium, class: 'img-responsive'
 						%p= link_to "#{product.name}", shop_product_path(product.link), class: 'link_black'
 						%p= "#{product.price} руб."
 						= button_to 'Купить', positions_path(product_id: product.id), class: 'btn btn-success', remote: true

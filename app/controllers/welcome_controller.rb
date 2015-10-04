@@ -6,5 +6,6 @@ class WelcomeController < ApplicationController
 		@menus = Menu.main
 		@events = Event.order(id: :desc).limit(2)
 		@tops = Product.top_sells
+		@slides = Product.get_slides
 	end
 end

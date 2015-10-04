@@ -6,6 +6,7 @@ class Product < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
 
 	scope :with_sells,	-> { where('sells > 0') }
+	scope :seasonable,	-> { where(season: true) }
 
 	validates :name, :price, :caption, :availability, :link, :sells, :menu_id, presence: true
 	validates :price, :sells, numericality: true
@@ -20,5 +21,9 @@ class Product < ActiveRecord::Base
 			# Пока берутся 4 случайных товара
 			# В перспективе внедрить расчет
 			buy_with = Product.all.sample(4)
+		end
+
+		def self.get_slides
+			slides = Product.seasonable.count >= 5 ? Product.seasonable.order(id: :desc).limit(5) : Product.all.sample(5)
 		end
 end

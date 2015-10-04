@@ -9,18 +9,36 @@
 		= render 'layouts/header'
 		.row
 			= render 'layouts/onelevel_menu'
-		.row
-			%h2 Летние предложения (сезонные продажи)
-			%p Блок для сезонных распродаж
-		.row
+		.row.slide_block
+			.col-xs-6.col
+				#myCarousel.carousel.slide
+					.carousel-inner
+						- @slides.each do |slide|
+							.item
+								- if slide.image.blank?
+									= image_tag 'empty-flower.png', class: 'img-responsive'
+								- else
+									= image_tag slide.image.medium, class: 'img-responsive', alt: slide.name
+								.container.active
+									.carousel-caption
+										%p= link_to slide.name, shop_product_path(slide.link)
+					%a.left.carousel-control{"data-slide" => "prev", href: "#myCarousel"}
+						%span.glyphicon.glyphicon-chevron-left
+					%a.right.carousel-control{"data-slide" => "next", href: "#myCarousel"}
+						%span.glyphicon.glyphicon-chevron-right
+			.col-xs-6.col
+				%h2 Какие цветы дарить на 8 марта?
+				%p Розы и хризантемы всегда хороши, выбирайте их по листьям, они должны быть блестящими и упругими. Если у цвета розы кроме лепестков есть зеленая обертка, значит розы свежие.
+				%p Тюльпаны - прекрасный символ весны. Их можно купить заранее, они хорошо сохраняются, обернутые в бумагу, на нижней полочке холодильника.
+		.row.events_block
 			- @events.each do |event|
 				.col-xs-6
 					.eventing
 						.col-xs-4
 							- if event.image.blank?
-								= image_tag 'empty-event.jpg', class: 'img img-responsive'
+								= image_tag 'empty-event.jpg', class: 'img-responsive'
 							- else
-								= image_tag event.image.medium, class: 'img img-responsive'
+								= image_tag event.image.medium, class: 'img-responsive'
 						.col-xs-8
 							%h2= link_to event.name, shop_event_path(event.link)
 							%p= event.caption
@@ -32,7 +50,7 @@
 						- if sell.image.blank?
 							.empty_img
 						- else
-							= image_tag sell.image.medium, class: 'img img-responsive'
+							= image_tag sell.image.medium, class: 'img-responsive'
 						= link_to sell.name, shop_product_path(sell.link), class: 'link_black'
 						%p= "#{sell.price} руб."
 						= button_to 'Купить', positions_path(product_id: sell.id), class: 'btn btn-success', remote: true

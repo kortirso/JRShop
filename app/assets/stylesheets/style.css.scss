@@ -359,3 +359,86 @@ a.link_black {
 .simple_block {
 	text-align: center;
 }
+
+.events_block {
+	margin: 40px 0 20px;
+}
+
+.slide_block {
+	margin: 20px 0;
+
+	.col {
+		padding: 0 50px;
+	}
+
+	h2 {
+		margin: 5px 0 10px;
+	}
+
+	p {
+		font-size: 14px;
+		margin: 0 0 2px;
+	}
+
+	#myCarousel {
+		border: 3px solid #fbe115;
+		border-radius: 5px;
+
+		.container {
+			padding-top: 0;
+		}
+	}
+
+	.carousel {
+		.item {
+			img {
+				width: 50%;
+				margin: 0 auto;
+				max-height: 225px;
+			}
+		}
+
+		.carousel-control.left, .carousel-control.right {
+			background: none;
+			color: #000;
+			opacity: 1;
+		}
+
+		.glyphicon {
+			width: 24px;
+			height: 42px;
+			margin-top: -25px;
+		}
+
+		.glyphicon-chevron-right {
+			background: url('arrow-right.png') no-repeat;
+			margin-right: -70px;
+
+			&:before {
+				content: none;
+			}
+		}
+
+		.glyphicon-chevron-left {
+			background: url('arrow-left.png') no-repeat;
+			margin-left: -70px;
+
+			&:before {
+				content: none;
+			}
+		}
+
+		.carousel-caption {
+			padding: 5px 0 0;
+			background: rgba(200,200,200,0.75);
+			width: 100%;
+			bottom: 0;
+			left: 0;
+		}
+
+		.carousel-caption p a {
+			color: #000;
+			font-size: 20px;
+		}
+	}
+}
