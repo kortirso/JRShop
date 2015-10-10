@@ -23,6 +23,12 @@ class Product < ActiveRecord::Base
 			buy_with = Product.all.sample(4)
 		end
 
+		def self.cart_buy_with
+			# Пока берутся 4 случайных товара
+			# В перспективе внедрить расчет
+			cart_buy_with = Product.all.sample(4)
+		end
+
 		def self.get_slides
 			slides = Product.seasonable.count >= 5 ? Product.seasonable.order(id: :desc).limit(5) : Product.all.sample(5)
 		end

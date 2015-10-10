@@ -8,6 +8,7 @@ class CartsController < ApplicationController
 			render "layouts/403", status: 404
 		else
 			@menus = Menu.main
+			@buy_with = Product.cart_buy_with
 			render :show
 		end
 	end
