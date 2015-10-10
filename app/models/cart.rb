@@ -1,6 +1,7 @@
 class Cart < ActiveRecord::Base
 	has_many :positions
 	has_many :products, through: :positions
+	has_one :order
 
 	validates :summ, numericality: true
 

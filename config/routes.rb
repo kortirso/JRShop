@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 	devise_for :managers
 
 	resources :products, :events
+	resources :orders, only: [:show, :create]
 
 	get 'admin_block' => 'admin#index', as: 'admin'
 

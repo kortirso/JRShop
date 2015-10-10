@@ -9,6 +9,7 @@ class CartsController < ApplicationController
 		else
 			@menus = Menu.main
 			@buy_with = Product.cart_buy_with
+			@order = Order.new
 			render :show
 		end
 	end
@@ -19,61 +20,74 @@ class CartsController < ApplicationController
 				pos.destroy
 			end
 		end
-		respond_to do |format|
-			format.html { redirect_to @cart }
-			format.json { head :no_content }
-		end
+		redirect_to @cart
 	end
 
 	def product_plus
 		@position = Position.where("id = ?", params[:position]).first
-		@position.update_attribute('count', @position.count + 1)
-		@position.cart.calc_summ
-		@position.reload
-		respond_to do |format|
-			format.js
+		if @position
+			@position.update_attribute('count', @position.count + 1)
+			@position.cart.calc_summ
+			@position.reload
+			respond_to do |format|
+				format.js
+			end
+		else
+			render "layouts/403", status: 404
 		end
 	end
 
 	def product_minus
 		@position = Position.where("id = ?", params[:position]).first
-		if @position.count > 1
-			@position.update_attribute('count', @position.count - 1)
-			@position.cart.calc_summ
-		end
-		@position.reload
-		respond_to do |format|
-			format.js
+		if @position
+			if @position.count > 1
+				@position.update_attribute('count', @position.count - 1)
+				@position.cart.calc_summ
+			end
+			@position.reload
+			respond_to do |format|
+				format.js
+			end
+		else
+			render "layouts/403", status: 404
 		end
 	end
 
 	def beauty
 		@position = Position.where("id = ?", params[:position]).first
-		if @position.beauty == true
-			@position.update_attribute('beauty', false)
-			@position.cart.calc_summ
+		if @position
+			if @position.beauty == true
+				@position.update_attribute('beauty', false)
+				@position.cart.calc_summ
+			else
+				@position.update_attribute('beauty', true)
+				@position.cart.calc_summ
+			end
+			@position.reload
+			respond_to do |format|
+				format.js
+			end
 		else
-			@position.update_attribute('beauty', true)
-			@position.cart.calc_summ
-		end
-		@position.reload
-		respond_to do |format|
-			format.js
+			render "layouts/403", status: 404
 		end
 	end
 
 	def green
 		@position = Position.where("id = ?", params[:position]).first
-		if @position.green == true
-			@position.update_attribute('green', false)
-			@position.cart.calc_summ
+		if @position
+			if @position.green == true
+				@position.update_attribute('green', false)
+				@position.cart.calc_summ
+			else
+				@position.update_attribute('green', true)
+				@position.cart.calc_summ
+			end
+			@position.reload
+			respond_to do |format|
+				format.js
+			end
 		else
-			@position.update_attribute('green', true)
-			@position.cart.calc_summ
-		end
-		@position.reload
-		respond_to do |format|
-			format.js
+			render "layouts/403", status: 404
 		end
 	end
 

@@ -46,7 +46,14 @@
 						%li Более 10 платежных систем!
 						%li Хотите заплатить наличными? Отправим отдельного куриера за оплатой!
 				.col-xs-8
-
+					%h3 Введите Ваши данные
+					= simple_form_for @order do |f|
+						.col-xs-4
+							= f.input :person, label: 'Имя', placeholder: 'Имя', required: true
+						.col-xs-4
+							= f.input :phone, label: 'Телефон', placeholder: '+79000000000', required: true
+						.col-xs-4
+							= f.button :submit, class: "btn btn-success", value: 'Продолжить оформление'
 			.row.buy_with
 				%h2 С этим обычно покупают
 				- @buy_with.each do |sell|

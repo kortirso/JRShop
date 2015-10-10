@@ -15,11 +15,9 @@ class PositionsController < ApplicationController
 
 	def drop
 		position = Position.find(params[:position_id])
-		respond_to do |format|
-			if position.destroy
-				@cart.calc_summ
-				format.html { redirect_to cart_path(position.cart) }
-			end
+		if position.destroy
+			@cart.calc_summ
+			redirect_to cart_path(position.cart)
 		end
 	end
 end

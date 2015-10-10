@@ -18,30 +18,24 @@ class ProductsController < ApplicationController
 
 	def create
 		@product = Product.new(product_params)
-		respond_to do |format|
-			if @product.save
-				format.html { redirect_to @product }
-			else
-				format.html { render :new}
-			end
+		if @product.save
+			redirect_to @product
+		else
+			render :new
 		end
 	end
 
 	def update
-		respond_to do |format|
-			if @product.update(product_params)
-				format.html { redirect_to @product }
-			else
-				format.html { render :edit}
-			end
+		if @product.update(product_params)
+			redirect_to @product
+		else
+			render :edit
 		end
 	end
 
 	def destroy
 		@product.destroy
-		respond_to do |format|
-			format.html { redirect_to products_path}
-		end
+		redirect_to products_path
 	end
 
 	private
