@@ -19,6 +19,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'pg_search'
 gem 'kaminari'
+gem 'wannabe_bool'
 
 group :test do
 	gem 'rspec-rails'

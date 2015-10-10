@@ -1,5 +1,4 @@
-$("#count_<%= @position.id %> p").html("<%= @position.count %>");
+$("#green_<%= @position.id %>").prop("checked", <%= @position.green %>);
 $("#summ_<%= @position.id %> p").html("<%= @position.summ %>");
 $("#total_summ p").html("Итого  <%= @position.cart.summ %> руб.");
-$('#cart_count').text("Товаров: <%= @position.cart.positions.count %>");
 $('#cart_summ').text("Сумма: <%= @position.cart.summ %> руб.");

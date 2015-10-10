@@ -29,6 +29,7 @@ class CartsController < ApplicationController
 		@position = Position.where("id = ?", params[:position]).first
 		@position.update_attribute('count', @position.count + 1)
 		@position.cart.calc_summ
+		@position.reload
 		respond_to do |format|
 			format.js
 		end
@@ -40,6 +41,37 @@ class CartsController < ApplicationController
 			@position.update_attribute('count', @position.count - 1)
 			@position.cart.calc_summ
 		end
+		@position.reload
+		respond_to do |format|
+			format.js
+		end
+	end
+
+	def beauty
+		@position = Position.where("id = ?", params[:position]).first
+		if @position.beauty == true
+			@position.update_attribute('beauty', false)
+			@position.cart.calc_summ
+		else
+			@position.update_attribute('beauty', true)
+			@position.cart.calc_summ
+		end
+		@position.reload
+		respond_to do |format|
+			format.js
+		end
+	end
+
+	def green
+		@position = Position.where("id = ?", params[:position]).first
+		if @position.green == true
+			@position.update_attribute('green', false)
+			@position.cart.calc_summ
+		else
+			@position.update_attribute('green', true)
+			@position.cart.calc_summ
+		end
+		@position.reload
 		respond_to do |format|
 			format.js
 		end

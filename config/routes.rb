@@ -13,6 +13,8 @@ Rails.application.routes.draw do
 		delete 'carts/:id' => :destroy
 		post 'plus/:position' => :product_plus, as: 'plus'
 		post 'minus/:position' => :product_minus, as: 'minus'
+		post 'beauty/:position' => :beauty, as: 'beauty'
+		post 'green/:position' => :green, as: 'green'
 	end
 
 	scope path: '/about', controller: :about do

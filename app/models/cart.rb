@@ -13,7 +13,12 @@ class Cart < ActiveRecord::Base
 	def calc_summ
 		self.summ = 0
 		positions.each do |position|
-			self.summ += position.count * position.product.price
+			base_price = position.product.price
+			base_price += 300 if position.beauty == true
+			base_price += 300 if position.green == true
+			position.summ = position.count * base_price
+			position.save!
+			self.summ += position.summ
 		end
 		save!
 	end
