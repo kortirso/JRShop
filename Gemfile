@@ -20,6 +20,7 @@ gem 'rmagick'
 gem 'pg_search'
 gem 'kaminari'
 gem 'wannabe_bool'
+gem "rubykassa"
 
 group :test do
 	gem 'rspec-rails'
