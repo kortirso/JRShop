@@ -272,7 +272,7 @@ a.link_black {
 	}
 }
 
-.tops_block, .products_block {
+.tops_block, .products_block, .buy_with_block {
 	max-width: 210px;
 	padding: 20px;
 	border: 2px solid #fbe115;
@@ -280,7 +280,7 @@ a.link_black {
 	background:  #FFFFF0;
 }
 
-.tops_block, .products_block, .product_block {
+.tops_block, .products_block, .product_block, .buy_with_block {
 	margin: 0 auto 25px;
 
 	.empty_img {
@@ -299,7 +299,7 @@ a.link_black {
 	}
 }
 
-.tops_block {
+.buy_with_block {
 	background: #eff8f6;
 	border: none;
 }
@@ -323,7 +323,7 @@ a.link_black {
 	}
 }
 
-.products_block, .tops_block {
+.products_block, .tops_block, .buy_with_block {
 	text-align: center;
 
 	p {
@@ -477,6 +477,24 @@ a.link_black {
 		.carousel-caption p a {
 			color: #000;
 			font-size: 20px;
+		}
+	}
+}
+
+footer {
+	background: #fffeca;
+	margin: 0 -15px;
+
+	.row {
+		padding: 10px 0;
+		margin: 0;
+
+		.pull-right {
+			text-align: right;
+		}
+
+		span {
+			color: #484848;
 		}
 	}
 }

@@ -6,7 +6,8 @@ class ShopController < ApplicationController
 	def category
 		@category = Menu.where('link = ?', params[:category]).first
 		@active = @category
-		@products = Product.where(menu_id: @category).order(id: :desc)
+		@group = params[:sub] ? Menu.where('link = ?', params[:sub]).first : @category
+		@products = Product.where(menu_id: @group).order(id: :desc)
 	end
 
 	def product

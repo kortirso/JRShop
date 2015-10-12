@@ -5,7 +5,7 @@
 		.row
 			= render 'layouts/twolevel_menu'
 		.row
-			%h2= "#{@active.name}"
+			%h2= "#{@group.name}"
 			- @products.each do |product|
 				.col-xs-3
 					.products_block
@@ -17,3 +17,4 @@
 						%p= "#{product.price} руб."
 						= button_to 'Купить', positions_path(product_id: product.id), class: 'btn btn-success', remote: true
 		= render 'layouts/bottom'
+		= render 'layouts/footer'
