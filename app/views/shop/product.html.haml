@@ -8,14 +8,14 @@
 			.col-xs-6
 				%h3= @product.name
 				%p.price_block
-					= "#{@product.price} руб."
+					= "Цена: #{@product.price} руб."
 					= button_to 'Купить', positions_path(product_id: @product.id), class: 'btn btn-success', remote: true
 				%p= @product.caption
 				%p
 					- if @product.availability
-						%span.have= "Есть в наличие"
+						%span.have= "есть в наличие"
 					- else
-						%span.havenot= "Нет в наличие"
+						%span.havenot= "нет в наличие"
 			.col-xs-6.product_block
 				- if @product.image.blank?
 					.empty_img
