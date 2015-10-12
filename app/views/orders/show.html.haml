@@ -4,3 +4,6 @@
 		= render "layouts/header"
 		.row
 			= render "layouts/onelevel_menu"
+		.row
+			%p= "Сумма покупок - #{@order.summ} руб."
+			%p= pay_url "Pay with Robokassa", @order.id, @order.summ, { html: { class: 'btn btn-primary disabled' }}

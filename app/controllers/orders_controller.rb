@@ -3,8 +3,10 @@ class OrdersController < ApplicationController
 	before_action :set_cart
 
 	def show
-		order = Order.where("id = ?", params[:id]).first
-		if order && order.cart.id == session[:cart_id]
+		@order = Order.where("id = ?", params[:id]).first
+		if @order && @order.cart.id == session[:cart_id]
+			@order.summ = @order.cart.summ
+			@order.save!
 			@menus = Menu.main
 			render :show
 		else
