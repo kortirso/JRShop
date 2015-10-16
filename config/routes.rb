@@ -35,5 +35,5 @@ Rails.application.routes.draw do
 	end
 
 	root to: 'welcome#index'
-	match "*path", to: "application#catch_404", via: :all
+	match '*path', to: 'application#catch_404', via: :all
 end
