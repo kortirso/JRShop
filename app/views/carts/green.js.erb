@@ -1,4 +1,9 @@
 $("#green_<%= @position.id %>").prop("checked", <%= @position.green %>);
-$("#summ_<%= @position.id %> p").html("<%= @position.summ %>");
+$("#summ_<%= @position.id %> p").html("<%= @position.summ %> руб.");
 $("#total_summ p").html("Итого  <%= @position.cart.summ %> руб.");
 $('#cart_summ').text("Сумма: <%= @position.cart.summ %> руб.");
+<% if @position.green %>
+	$("#green_<%= @position.id %>").closest("p").children("label").addClass("checked");
+<% else %>
+	$("#green_<%= @position.id %>").closest("p").children("label").removeClass("checked");
+<% end %>
