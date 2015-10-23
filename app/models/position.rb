@@ -10,5 +10,6 @@ class Position < ActiveRecord::Base
 	private
 		def get_start_summ
 			self.summ = self.product.price
+			save!
 		end
 end
