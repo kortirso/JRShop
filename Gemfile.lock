@@ -253,7 +253,7 @@ DEPENDENCIES
   pg
   puma
   rails (= 4.2.2)
-  rmagick
+  rmagick (= 2.15.4)
   rspec-rails
   rubykassa
   sass-rails (~> 5.0)

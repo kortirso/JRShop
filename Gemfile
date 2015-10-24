@@ -16,8 +16,7 @@ gem 'autoprefixer-rails', '5.2.1'
 gem 'haml'
 gem 'simple_form'
 gem 'carrierwave'
-gem 'rmagick'
-#gem 'pg_search'
+gem 'rmagick', '2.15.4'
 gem 'kaminari'
 gem 'wannabe_bool'
 gem 'rubykassa'
@@ -43,3 +42,5 @@ group :development do
 end
 
 gem 'puma'
+gem 'execjs'
+gem 'therubyracer'
