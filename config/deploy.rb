@@ -1,5 +1,5 @@
 # Change these
-server '46.101.200.119', port: 3000, roles: [:web, :app, :db], primary: true
+server '46.101.200.119', port: 22, roles: [:web, :app, :db], primary: true
 
 set :repo_url,        'git@github.com:kortirso/JRShop.git'
 set :application,     'JRShop'
