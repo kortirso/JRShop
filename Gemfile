@@ -16,7 +16,7 @@ gem 'autoprefixer-rails', '5.2.1'
 gem 'haml'
 gem 'simple_form'
 gem 'carrierwave'
-gem 'rmagick'
+gem 'rmagick', '2.15.4'
 gem 'kaminari'
 gem 'wannabe_bool'
 gem 'rubykassa'
@@ -32,3 +32,15 @@ group :development, :test do
 	gem 'web-console', '~> 2.0'
 	gem 'spring'
 end
+
+group :development do
+	gem 'capistrano',	require: false
+	gem 'capistrano-rvm',	require: false
+	gem 'capistrano-rails',	require: false
+	gem 'capistrano-bundler',	require: false
+	gem 'capistrano3-puma',	require: false
+end
+
+gem 'puma'
+gem 'execjs'
+gem 'therubyracer'
