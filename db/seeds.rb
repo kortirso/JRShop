@@ -19,24 +19,3 @@ if Menu.count == 0
 	Menu.create(name: 'Оформление торжества', upper_id: menu_2.id, link: 'registraion')
 	Menu.create(name: 'Аксессуары', upper_id: menu_2.id, link: 'accessories')
 end
-
-if Manager.count == 0
-	Manager.create(email: 'tester@tester.com', password: 'Tester85')
-end
-
-# Для боевого сервера удалить нижеследующие данные
-
-# заполнение тестовыми товарами
-if Product.count == 0
-	Menu.all.each do |menu|
-		(1..12).each do |x|
-			Product.create!(name: "Супербукет_#{x}", price: x, caption: "Супербукет_#{x}", menu_id: menu.id, availability: true, link: "#{menu.id}_#{x}", sells: 0, image: '')
-		end
-	end
-end
-
-if Event.count == 0
-	(1..2).each do |x|
-		Event.create!(name: 'Розы по 70 руб.', caption: 'Только у нас и только сейчас. Успевайте пока не разобрали, новый привоз с юга', active: true, link: "event_#{x}")
-	end
-end
