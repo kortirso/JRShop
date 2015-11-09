@@ -1,6 +1,3 @@
-# config valid only for Capistrano 3.1
-lock '3.1.0'
-
 set :application, 'JRShop'
 set :repo_url, 'git@github.com:kortirso/JRShop.git'
 set :deploy_to, '/home/kamelia/JRShop'
