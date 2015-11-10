@@ -10,9 +10,9 @@
 				.col-xs-3
 					.products_block
 						- if product.image.blank?
-							.empty_img
+							= image_tag 'empty-flower.png', class: 'img-responsive'
 						- else
-							= image_tag product.image.medium, class: 'img-responsive'
+							= image_tag product.image.small, class: 'img-responsive'
 						%p= link_to "#{product.name}", shop_product_path(product.link), class: 'link_black'
 						%p= "#{product.price} руб."
 						= button_to 'Купить', positions_path(product_id: product.id), class: 'btn btn-success', remote: true

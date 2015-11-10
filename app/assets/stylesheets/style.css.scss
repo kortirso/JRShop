@@ -285,19 +285,22 @@ a.link_black {
 .tops_block, .products_block, .product_block, .buy_with_block {
 	margin: 0 auto 25px;
 
-	.empty_img {
-		width: 150px;
-		height: 150px;
-		margin: 0 auto;
-		background-image: image-url('empty-flower.png');
-		background-size: 100% 100%;
-	}
-
 	a {
 		display: block;
 		text-align: center;
 		margin: 5px 0;
 		text-decoration: underline;
+	}
+
+	img {
+		width: 150px;
+		margin: 0 auto;
+	}
+}
+
+.product_block {
+	img {
+		width: 250px;
 	}
 }
 

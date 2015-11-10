@@ -12,9 +12,9 @@
 						.row{id: "row_#{position.id}"}
 							.col-xs-2.order_image
 								- if position.product.image.blank?
-									.empty_img
+									= image_tag 'empty-flower.png', class: 'img-responsive'
 								- else
-									= image_tag position.product.image.medium, class: 'img-responsive'
+									= image_tag position.product.image.small, class: 'img-responsive'
 							.col-xs-3
 								%p.product_name= position.product.name
 							.col-xs-4.check_block

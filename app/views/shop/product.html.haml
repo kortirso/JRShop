@@ -18,7 +18,7 @@
 						%span.havenot= "нет в наличие"
 			.col-xs-6.product_block
 				- if @product.image.blank?
-					.empty_img
+					= image_tag 'empty-flower.png', class: 'img-responsive'
 				- else
 					= image_tag @product.image.medium, class: 'img-responsive'
 		= render 'layouts/buy_with_block'
