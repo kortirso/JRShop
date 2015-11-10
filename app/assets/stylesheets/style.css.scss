@@ -111,7 +111,8 @@ ul.top_menu {
 ul#one_level {
 	margin: 0;
 	padding: 55px 0 5px;
-	background-image: image-url('back-menu-line.png') repeat-x;
+	background-image: image-url('back-menu-line.png');
+	background-repeat: repeat-x;
 	border-bottom: 5px solid #54a642;
 
 	li {
@@ -128,7 +129,8 @@ ul#one_level {
 ul#two_level {
 	margin: 0;
 	padding: 42px 0 0;
-	background-image: image-url('back-menu-line.png') repeat-x;
+	background-image: image-url('back-menu-line.png');
+	background-repeat: repeat-x;
 	border-bottom: 5px solid #54a742;
 
 	li {
@@ -450,7 +452,8 @@ a.link_black {
 		}
 
 		.glyphicon-chevron-right {
-			background-image: image-url('arrow-right.png') no-repeat;
+			background-image: image-url('arrow-right.png');
+			background-repeat: no-repeat;
 			margin-right: -70px;
 
 			&:before {
@@ -459,7 +462,8 @@ a.link_black {
 		}
 
 		.glyphicon-chevron-left {
-			background-image: image-url('arrow-left.png') no-repeat;
+			background-image: image-url('arrow-left.png');
+			background-repeat: no-repeat;
 			margin-left: -70px;
 
 			&:before {
@@ -558,10 +562,12 @@ footer {
 			padding: 2px 0 10px 30px;
 			text-align: left;
 			margin: 0;
-			background-image: image-url(uncheck.png) no-repeat;
+			background-image: image-url('uncheck.png');
+			background-repeat: no-repeat;
 
 			&.checked {
-				background-image: image-url(check.png) no-repeat;
+				background-image: image-url('check.png');
+				background-repeat: no-repeat;
 			}
 		}
 	}
@@ -590,11 +596,13 @@ footer {
 		}
 
 		.button_up {
-			background-image: image-url(button_up.png) no-repeat;
+			background-image: image-url('button_up.png');
+			background-repeat: no-repeat;
 		}
 
 		.button_down {
-			background-image: image-url(button_down.png) no-repeat;
+			background-image: image-url('button_down.png');
+			background-repeat: no-repeat;
 		}
 
 		#plus, #minus {
@@ -631,7 +639,8 @@ footer {
 		width: 32px;
 		height: 32px;
 		border: none;
-		background-image: image-url(button_delete.png) no-repeat;
+		background-image: image-url('button_delete.png');
+		background-repeat: no-repeat;
 	}
 }
 
