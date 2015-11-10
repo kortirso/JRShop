@@ -8,7 +8,7 @@
 }
 
 body {
-	background: url('background.jpg');
+	background-image: image-url('background.jpg');
 
 	.container {
 		background: #FFF;
@@ -26,7 +26,7 @@ body {
 
 		.btn {
 			padding: 6px 30px;
-			background: url('button.png');
+			background-image: image-url('button.png');
 			background-size: 100% 100%;
 			border-radius: 0;
 			border: none;
@@ -35,7 +35,7 @@ body {
 			box-shadow: none;
 
 			&:hover, &:focus {
-				background: url('button.png');
+				background-image: image-url('button.png');
 				background-size: 100% 100%;
 				border: none;
 				color: #FFF;
@@ -94,7 +94,7 @@ ul.top_menu {
 	display: inline-block;
 	text-align: center;
 	width: 62%;
-	background: url('ul_top.png');
+	background-image: image-url('ul_top.png');
 	background-size: 100% 100%;
 
 	li {
@@ -111,7 +111,7 @@ ul.top_menu {
 ul#one_level {
 	margin: 0;
 	padding: 55px 0 5px;
-	background: url('back-menu-line.png') repeat-x;
+	background-image: image-url('back-menu-line.png') repeat-x;
 	border-bottom: 5px solid #54a642;
 
 	li {
@@ -128,7 +128,7 @@ ul#one_level {
 ul#two_level {
 	margin: 0;
 	padding: 42px 0 0;
-	background: url('back-menu-line.png') repeat-x;
+	background-image: image-url('back-menu-line.png') repeat-x;
 	border-bottom: 5px solid #54a742;
 
 	li {
@@ -287,7 +287,7 @@ a.link_black {
 		width: 150px;
 		height: 150px;
 		margin: 0 auto;
-		background: url('empty-flower.png');
+		background-image: image-url('empty-flower.png');
 		background-size: 100% 100%;
 	}
 
@@ -450,7 +450,7 @@ a.link_black {
 		}
 
 		.glyphicon-chevron-right {
-			background: url('arrow-right.png') no-repeat;
+			background-image: image-url('arrow-right.png') no-repeat;
 			margin-right: -70px;
 
 			&:before {
@@ -459,7 +459,7 @@ a.link_black {
 		}
 
 		.glyphicon-chevron-left {
-			background: url('arrow-left.png') no-repeat;
+			background-image: image-url('arrow-left.png') no-repeat;
 			margin-left: -70px;
 
 			&:before {
@@ -524,7 +524,7 @@ footer {
 			width: 110px;
 			height: 110px;
 			margin: 0 auto;
-			background: url('empty-flower.png');
+			background-image: image-url('empty-flower.png');
 			background-size: 100% 100%;
 		}
 	}
@@ -558,10 +558,10 @@ footer {
 			padding: 2px 0 10px 30px;
 			text-align: left;
 			margin: 0;
-			background: url(uncheck.png) no-repeat;
+			background-image: image-url(uncheck.png) no-repeat;
 
 			&.checked {
-				background: url(check.png) no-repeat;
+				background-image: image-url(check.png) no-repeat;
 			}
 		}
 	}
@@ -590,11 +590,11 @@ footer {
 		}
 
 		.button_up {
-			background: url(button_up.png) no-repeat;
+			background-image: image-url(button_up.png) no-repeat;
 		}
 
 		.button_down {
-			background: url(button_down.png) no-repeat;
+			background-image: image-url(button_down.png) no-repeat;
 		}
 
 		#plus, #minus {
@@ -631,7 +631,7 @@ footer {
 		width: 32px;
 		height: 32px;
 		border: none;
-		background: url(button_delete.png) no-repeat;
+		background-image: image-url(button_delete.png) no-repeat;
 	}
 }
 
