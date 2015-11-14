@@ -22,16 +22,14 @@ gem 'kaminari'
 gem 'wannabe_bool'
 gem 'rubykassa'
 
-group :test do
-	gem 'rspec-rails'
-	gem 'factory_girl_rails'
-	gem 'capybara'
-end
-
 group :development, :test do
 	gem 'byebug'
 	gem 'web-console', '~> 2.0'
 	gem 'spring'
+	gem 'rspec-rails'
+	gem 'factory_girl_rails'
+	gem 'capybara'
+	gem 'shoulda-matchers'
 end
 
 gem 'capistrano', '~> 3.4.0'

@@ -1,3 +1,6 @@
 RSpec.describe Event, type: :model do
-	pending "add some examples to (or delete) #{__FILE__}"
+	it { should validate_presence_of :name }
+	it { should validate_presence_of :caption }
+	it { should validate_presence_of :link }
+	it { should validate_uniqueness_of :link }
 end

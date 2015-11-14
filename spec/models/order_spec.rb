@@ -1,3 +1,6 @@
 RSpec.describe Order, type: :model do
-	pending "add some examples to (or delete) #{__FILE__}"
+	it { should validate_presence_of :person }
+	it { should validate_presence_of :phone }
+	it { should validate_presence_of :cart_id }
+	it { should belong_to :cart }
 end
