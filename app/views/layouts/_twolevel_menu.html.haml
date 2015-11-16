@@ -13,7 +13,7 @@
 			- @active.lowers.each do |menu_sub|
 				%li
 					- if menu_sub.image.blank?
-						= image_tag 'empty-bouquet.png', class: 'img-responsive color_block'
+						= link_to (image_tag 'empty-bouquet.png', class: 'img-responsive color_block'), sub_shop_category_path(@active.link, menu_sub.link)
 					- else
-						= image_tag menu_sub.image.medium, class: 'img-responsive color_block'
+						= link_to (image_tag menu_sub.image.medium, class: 'img-responsive color_block'), sub_shop_category_path(@active.link, menu_sub.link)
 					= link_to "#{menu_sub.name}", sub_shop_category_path(@active.link, menu_sub.link), class: 'link_black'
