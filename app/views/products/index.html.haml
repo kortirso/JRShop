@@ -1,36 +1,36 @@
 - provide(:title, 'Все товары')
 %body.products
-	.container
-		.row
-			.col-xs-12
-				%h1 Все товары
-				= link_to 'Новый товар', new_product_path, class: 'btn btn-primary'
-		.row
-			.col-xs-12
-				.table-responsive
-					%table.table.table-striped
-						%thead
-							%tr
-								%th ID
-								%th Название
-								%th Цена
-								%th Наличие
-								%th Ссылка
-								%th Категория
-								%th Изображение
-								%th
-								%th
-								%th
-						%tbody
-							- @products.each do |product|
-								%tr
-									%td= product.id
-									%td= product.name
-									%td= product.price
-									%td= product.availability
-									%td= product.link
-									%td= product.menu.name
-									%td= product.image.small
-									%td= link_to 'Посмотреть', product_path(product), class: 'btn btn-primary'
-									%td= link_to 'Изменить', edit_product_path(product), class: 'btn btn-primary'
-									%td= link_to 'Удалить', product_path(product), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger'
+    .container
+        .row
+            .col-xs-12
+                %h1 Все товары
+                = link_to 'Новый товар', new_product_path, class: 'btn btn-primary'
+        .row
+            .col-xs-12
+                .table-responsive
+                    %table.table.table-striped
+                        %thead
+                            %tr
+                                %th ID
+                                %th Название
+                                %th Цена
+                                %th Наличие
+                                %th Ссылка
+                                %th Категория
+                                %th Изображение
+                                %th
+                                %th
+                                %th
+                        %tbody
+                            - @products.each do |product|
+                                %tr
+                                    %td= product.id
+                                    %td= product.name
+                                    %td= product.price
+                                    %td= product.availability
+                                    %td= product.link
+                                    %td= product.menu.name
+                                    %td= product.image.small
+                                    %td= link_to 'Посмотреть', product_path(product), class: 'btn btn-primary'
+                                    %td= link_to 'Изменить', edit_product_path(product), class: 'btn btn-primary'
+                                    %td= link_to 'Удалить', product_path(product), method: :delete, data: { confirm: 'Вы уверены?' }, class: 'btn btn-danger'

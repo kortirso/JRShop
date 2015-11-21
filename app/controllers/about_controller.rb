@@ -1,30 +1,30 @@
 class AboutController < ApplicationController
-	include CurrentCart
-	before_action :set_cart
-	before_action :get_menu
+    include CurrentCart
+    before_action :set_cart
+    before_action :get_menu
 
-	def delivery
+    def delivery
 
-	end
+    end
 
-	def cash
+    def cash
 
-	end
+    end
 
-	def responces
+    def responces
 
-	end
+    end
 
-	def about
+    def about
 
-	end
+    end
 
-	def contacts
+    def contacts
 
-	end
+    end
 
-	private
-		def get_menu
-			@menus = Menu.main
-		end
+    private
+    def get_menu
+        @menus = Menu.main
+    end
 end

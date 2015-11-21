@@ -1,3 +1,3 @@
 class Manager < ActiveRecord::Base
-	devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
+    devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable
 end

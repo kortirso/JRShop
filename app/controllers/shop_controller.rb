@@ -1,31 +1,31 @@
 class ShopController < ApplicationController
-	include CurrentCart
-	before_action :set_cart
-	before_action :get_menu
+    include CurrentCart
+    before_action :set_cart
+    before_action :get_menu
 
-	def category
-		@category = Menu.where('link = ?', params[:category]).first
-		@active = @category
-		@group = params[:sub] ? Menu.where('link = ?', params[:sub]).first : @category
-		@products = Product.where(menu_id: @group).order(id: :desc)
-	end
+    def category
+        @category = Menu.where('link = ?', params[:category]).first
+        @active = @category
+        @group = params[:sub] ? Menu.where('link = ?', params[:sub]).first : @category
+        @products = Product.where(menu_id: @group).order(id: :desc)
+    end
 
-	def product
-		@product = Product.where('link = ?', params[:product]).first
-		@active = @product.menu
-		@buy_with = Product.buy_with
-	end
+    def product
+        @product = Product.where('link = ?', params[:product]).first
+        @active = @product.menu
+        @buy_with = Product.buy_with
+    end
 
-	def events
-		@events = Event.all
-	end
+    def events
+        @events = Event.all
+    end
 
-	def event
-		@event = Event.where('link = ?', params[:event]).first
-	end
+    def event
+        @event = Event.where('link = ?', params[:event]).first
+    end
 
-	private
-		def get_menu
-			@menus = Menu.main
-		end
+    private
+    def get_menu
+        @menus = Menu.main
+    end
 end

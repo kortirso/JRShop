@@ -1,7 +1,7 @@
 class AdminController < ApplicationController
-	before_action :authenticate_manager!
+    before_action :authenticate_manager!
 
-	def index
+    def index
 
-	end
+    end
 end

@@ -1,25 +1,25 @@
 - provide(:title, 'Product')
 %body.product
-	.container
-		= render "layouts/header"
-		.row
-			= render "layouts/twolevel_menu"
-		.row.caption
-			.col-xs-6
-				%h3= @product.name
-				%p.price_block
-					= "Цена: #{@product.price} руб."
-					= button_to 'Купить', positions_path(product_id: @product.id), class: 'btn btn-success', remote: true
-				%p= @product.caption
-				%p
-					- if @product.availability
-						%span.have= "есть в наличие"
-					- else
-						%span.havenot= "нет в наличие"
-			.col-xs-6.product_block
-				- if @product.image.blank?
-					= image_tag 'empty-flower.png', class: 'img-responsive'
-				- else
-					= image_tag @product.image.medium, class: 'img-responsive'
-		= render 'layouts/buy_with_block'
-		= render 'layouts/footer'
+    .container
+        = render "layouts/header"
+        .row
+            = render "layouts/twolevel_menu"
+        .row.caption
+            .col-xs-6
+                %h3= @product.name
+                %p.price_block
+                    = "Цена: #{@product.price} руб."
+                    = button_to 'Купить', positions_path(product_id: @product.id), class: 'btn btn-success', remote: true
+                %p= @product.caption
+                %p
+                    - if @product.availability
+                        %span.have= "есть в наличие"
+                    - else
+                        %span.havenot= "нет в наличие"
+            .col-xs-6.product_block
+                - if @product.image.blank?
+                    = image_tag 'empty-flower.png', class: 'img-responsive'
+                - else
+                    = image_tag @product.image.medium, class: 'img-responsive'
+        = render 'layouts/buy_with_block'
+        = render 'layouts/footer'

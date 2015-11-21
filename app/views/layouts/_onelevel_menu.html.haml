@@ -1,7 +1,7 @@
 .col-xs-12.back_menu
-	%ul.menus#one_level
-		- @menus.each do |menu|
-			%li
-				.color_block
-					= link_to (image_tag "#{menu.image}", class: 'img-responsive'), shop_category_path(menu.link)
-				= link_to "#{menu.name}", shop_category_path(menu.link), class: 'link_black'
+    %ul.menus#one_level
+        - @menus.each do |menu|
+            %li
+                .color_block
+                    = link_to (image_tag "#{menu.image}", class: 'img-responsive'), shop_category_path(menu.link)
+                = link_to "#{menu.name}", shop_category_path(menu.link), class: 'link_black'

@@ -23,13 +23,15 @@ gem 'wannabe_bool'
 gem 'rubykassa'
 
 group :development, :test do
-	gem 'byebug'
-	gem 'web-console', '~> 2.0'
-	gem 'spring'
-	gem 'rspec-rails'
-	gem 'factory_girl_rails'
-	gem 'capybara'
-	gem 'shoulda-matchers'
+    gem 'byebug'
+    gem 'web-console', '~> 2.0'
+    gem 'spring'
+    gem 'rspec-rails'
+    gem 'factory_girl_rails'
+    gem 'capybara'
+    gem 'shoulda-matchers'
+    gem 'database_cleaner'
+    gem 'capybara-webkit'
 end
 
 gem 'capistrano', '~> 3.4.0'

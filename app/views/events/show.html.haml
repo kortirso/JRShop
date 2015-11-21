@@ -1,20 +1,20 @@
 - provide(:title, 'Акция')
 %body.event
-	.container
-		.row
-			.col-xs-12
-				%h1 Просмотр акции
-				%p
-					%strong Название
-					= @event.name
-				%p
-					%strong Описание
-					= @event.caption
-				%p
-					%strong Ссылка
-					= @event.link
-				%p
-					%strong Изображения
-					= image_tag @event.image.medium, class: 'img-responsive', alt: 'Фото для акции'
-				= link_to 'Редактировать', edit_event_path(@event), class: 'btn btn-primary'
-				= link_to 'Назад', events_path, class: 'btn btn-primary'
+    .container
+        .row
+            .col-xs-12
+                %h1 Просмотр акции
+                %p
+                    %strong Название
+                    = @event.name
+                %p
+                    %strong Описание
+                    = @event.caption
+                %p
+                    %strong Ссылка
+                    = @event.link
+                %p
+                    %strong Изображения
+                    = image_tag @event.image.medium, class: 'img-responsive', alt: 'Фото для акции'
+                = link_to 'Редактировать', edit_event_path(@event), class: 'btn btn-primary'
+                = link_to 'Назад', events_path, class: 'btn btn-primary'

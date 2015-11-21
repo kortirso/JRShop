@@ -1,68 +1,68 @@
 - provide(:title, 'Корзина')
 %body.cart
-	.container
-		= render "layouts/header"
-		.row
-			= render "layouts/onelevel_menu"
-		- if @current_cart.positions.count > 0
-			.row#make_order
-				%h3 Оформление заказа
-				.col-xs-12
-					- @current_cart.positions.order(id: :asc).each do |position|
-						.row{id: "row_#{position.id}"}
-							.col-xs-2.order_image
-								- if position.product.image.blank?
-									= image_tag 'empty-flower.png', class: 'img-responsive'
-								- else
-									= image_tag position.product.image.small, class: 'img-responsive'
-							.col-xs-3
-								%p.product_name= position.product.name
-							.col-xs-4.check_block
-								%p
-									= link_to check_box_tag("beauty_#{position.id}", value = "1", checked = "#{position.beauty}".to_b), beauty_path(position), remote: true, method: :post
-									- if position.beauty
-										= label_tag "beauty_#{position.id}", "красивая упаковка +300 руб.", class: 'checked'
-									- else
-										= label_tag "beauty_#{position.id}", "красивая упаковка +300 руб."
-								%p
-									= link_to check_box_tag("green_#{position.id}", value = "1", checked = "#{position.green}".to_b), green_path(position), remote: true, method: :post
-									- if position.green
-										= label_tag "green_#{position.id}", "добавить зелени +300 руб.", class: 'checked'
-									- else
-										= label_tag "green_#{position.id}", "добавить зелени +300 руб."
-							.col-xs-1.count{id: "count_#{position.id}"}
-								%p= position.count
-								#plus= button_to "", plus_path(position), class: "button_up", remote: true
-								#minus= button_to "", minus_path(position), class: "button_down", remote: true\
-							.col-xs-1.summ{id: "summ_#{position.id}"}
-								%p= "#{position.summ} руб."
-							.col-xs-1.delete
-								%p= button_to "", positions_destroy_path(position_id: position.id), class: "button_delete", method: :delete
-			.row
-				.col-xs-12#total_summ
-					%p= "Итого #{@current_cart.summ} руб."
-			.row#delivery_block
-				.col-xs-3
-					%ul
-						Доставка
-						%li Можем доставить за 1 час!
-						%li Доставка днем Бесплатная!
-						%li Работаем 24/7, заказы лучше делать заранее! ;-)
-					%ul
-						Оплата
-						%li Принимаем любые банковские карты!
-						%li Более 10 платежных систем!
-				.col-xs-9#delivery
-					%h3 Введите Ваши данные
-					= simple_form_for @order do |f|
-						.col-xs-4
-							= f.input :person, label: 'Имя', placeholder: 'Имя'
-						.col-xs-4
-							= f.input :phone, label: 'Телефон', placeholder: '+79000000000'
-						.col-xs-4
-							= f.button :submit, class: "btn btn-success", value: 'Продолжить оформление'
-			= render 'layouts/buy_with_block'
-		- else
-			.row
-				%p Кoрзина пустая
-		= render 'layouts/footer'
+    .container
+        = render "layouts/header"
+        .row
+            = render "layouts/onelevel_menu"
+        - if @current_cart.positions.count > 0
+            .row#make_order
+                %h3 Оформление заказа
+                .col-xs-12
+                    - @current_cart.positions.order(id: :asc).each do |position|
+                        .row{id: "row_#{position.id}"}
+                            .col-xs-2.order_image
+                                - if position.product.image.blank?
+                                    = image_tag 'empty-flower.png', class: 'img-responsive'
+                                - else
+                                    = image_tag position.product.image.small, class: 'img-responsive'
+                            .col-xs-3
+                                %p.product_name= position.product.name
+                            .col-xs-4.check_block
+                                %p
+                                    = link_to check_box_tag("beauty_#{position.id}", value = "1", checked = "#{position.beauty}".to_b), beauty_path(position), remote: true, method: :post
+                                    - if position.beauty
+                                        = label_tag "beauty_#{position.id}", "красивая упаковка +300 руб.", class: 'checked'
+                                    - else
+                                        = label_tag "beauty_#{position.id}", "красивая упаковка +300 руб."
+                                %p
+                                    = link_to check_box_tag("green_#{position.id}", value = "1", checked = "#{position.green}".to_b), green_path(position), remote: true, method: :post
+                                    - if position.green
+                                        = label_tag "green_#{position.id}", "добавить зелени +300 руб.", class: 'checked'
+                                    - else
+                                        = label_tag "green_#{position.id}", "добавить зелени +300 руб."
+                            .col-xs-1.count{id: "count_#{position.id}"}
+                                %p= position.count
+                                #plus= button_to "", plus_path(position), class: "button_up", remote: true
+                                #minus= button_to "", minus_path(position), class: "button_down", remote: true\
+                            .col-xs-1.summ{id: "summ_#{position.id}"}
+                                %p= "#{position.summ} руб."
+                            .col-xs-1.delete
+                                %p= button_to "", positions_destroy_path(position_id: position.id), class: "button_delete", method: :delete
+            .row
+                .col-xs-12#total_summ
+                    %p= "Итого #{@current_cart.summ} руб."
+            .row#delivery_block
+                .col-xs-3
+                    %ul
+                        Доставка
+                        %li Можем доставить за 1 час!
+                        %li Доставка днем Бесплатная!
+                        %li Работаем 24/7, заказы лучше делать заранее! ;-)
+                    %ul
+                        Оплата
+                        %li Принимаем любые банковские карты!
+                        %li Более 10 платежных систем!
+                .col-xs-9#delivery
+                    %h3 Введите Ваши данные
+                    = simple_form_for @order do |f|
+                        .col-xs-4
+                            = f.input :person, label: 'Имя', placeholder: 'Имя'
+                        .col-xs-4
+                            = f.input :phone, label: 'Телефон', placeholder: '+79000000000'
+                        .col-xs-4
+                            = f.button :submit, class: "btn btn-success", value: 'Продолжить оформление'
+            = render 'layouts/buy_with_block'
+        - else
+            .row
+                %p Кoрзина пустая
+        = render 'layouts/footer'

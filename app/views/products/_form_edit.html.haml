@@ -1,31 +1,31 @@
 .row
-	.col-xs-12
-		%h1 Редактирование товара
-		= simple_form_for @product do |f|
-			.col-xs-8.col-md-4
-				= f.input :name, label: 'Название', placeholder: 'Название товара'
-			.clearfix
-			.col-xs-8.col-md-4
-				= f.input :caption, label: 'Описание', placeholder: 'Описание товара'
-			.clearfix
-			.col-xs-4
-				= f.input :price, label: 'Цена', placeholder: 'Цена'
-			.clearfix
-			.col-xs-8.col-md-4
-				= f.input :availability, as: :boolean, label: 'Наличие'
-			.clearfix
-			.col-xs-8.col-md-4
-				= f.input :link, label: 'Ссылка', placeholder: 'Название на английском для адресной строки'
-			.clearfix
-			.col-xs-6.col-md-3
-				= f.association :menu, label: 'Категория', label_method: :name, value_method: :id, include_blank: false
-			.clearfix
-			.col-xs-12
-				%h4 Изображение для товара
-				= image_tag @product.image.medium
-				= f.file_field :image
-			.clearfix
-			%br
-			.col-xs-12
-				.actions
-					= f.button :submit, class: "btn btn-success", value: 'Применить изменения'
+    .col-xs-12
+        %h1 Редактирование товара
+        = simple_form_for @product do |f|
+            .col-xs-8.col-md-4
+                = f.input :name, label: 'Название', placeholder: 'Название товара'
+            .clearfix
+            .col-xs-8.col-md-4
+                = f.input :caption, label: 'Описание', placeholder: 'Описание товара'
+            .clearfix
+            .col-xs-4
+                = f.input :price, label: 'Цена', placeholder: 'Цена'
+            .clearfix
+            .col-xs-8.col-md-4
+                = f.input :availability, as: :boolean, label: 'Наличие'
+            .clearfix
+            .col-xs-8.col-md-4
+                = f.input :link, label: 'Ссылка', placeholder: 'Название на английском для адресной строки'
+            .clearfix
+            .col-xs-6.col-md-3
+                = f.association :menu, label: 'Категория', label_method: :name, value_method: :id, include_blank: false
+            .clearfix
+            .col-xs-12
+                %h4 Изображение для товара
+                = image_tag @product.image.medium
+                = f.file_field :image
+            .clearfix
+            %br
+            .col-xs-12
+                .actions
+                    = f.button :submit, class: "btn btn-success", value: 'Применить изменения'
