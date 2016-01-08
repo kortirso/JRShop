@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     resources :orders, only: [:show, :create]
 
     get 'admin_block' => 'admin#index', as: 'admin'
+    get 'tomats' => 'welcome#tomats', as: 'tomats'
 
     post 'positions/create' => 'positions#create', as: 'positions'
     delete 'positions' => 'positions#drop', as: 'positions_destroy'

@@ -8,7 +8,7 @@ if Menu.count == 0
     Menu.create(name: 'Букеты из игрушек', link: 'toys', image: 'menu-toys.png')
     Menu.create(name: 'Горшечные растения', link: 'pots', image: 'menu-pots.png')
     Menu.create(name: 'Товары для праздника', link: 'holidays', image: 'menu-holidays.png')
-    Menu.create(name: 'Товары для сада', link: 'garden', image: 'menu-garden.png')
+    #Menu.create(name: 'Товары для сада', link: 'garden', image: 'menu-garden.png')
     # второстепенные разделы
     Menu.create(name: 'Женские', upper_id: menu_1.id, link: 'female')
     Menu.create(name: 'Мужские', upper_id: menu_1.id, link: 'male')
