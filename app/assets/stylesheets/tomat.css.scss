@@ -47,7 +47,7 @@
   /*first section*/
   .first-section{
     background-position: top center;
-    background-image: url('tomats/bgfirstsection.png');
+    background-image: image-url('bgfirstsection.png');
     background-repeat: no-repeat;
     background-size: cover;
     padding-bottom:40px;
@@ -124,7 +124,7 @@
   /*sezonie-prodaji*/
   .sezonie-prodaji{
     color: #fff;
-    background-image: url('tomats/bgsezonieprodaji.png');
+    background-image: image-url('bgsezonieprodaji.png');
     background-size: cover;
     height: 673px;  
   }
@@ -157,7 +157,7 @@
   .luchshie-semena{
     color:#53ca00;
     background-color: #f4ffe7;
-    background-image: url('tomats/bgluchshiesemena.png');
+    background-image: image-url('bgluchshiesemena.png');
     background-position: left top;
     background-repeat: repeat; 
   }
@@ -228,7 +228,7 @@
     height:50px;
   }
   .karta{
-    background-image: url('tomats/map_bg.jpg');
+    background-image: image-url('map_bg.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     padding: 50px 50px 50px 50px;
