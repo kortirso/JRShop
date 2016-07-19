@@ -9,6 +9,6 @@ class ApplicationController < ActionController::Base
 
     private
     def render_not_found
-        render "layouts/403", status: 404
+        render 'layouts/404', status: 404
     end
 end
