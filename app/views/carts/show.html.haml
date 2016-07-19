@@ -1,9 +1,9 @@
 - provide(:title, 'Корзина')
 %body.cart
     .container
-        = render "layouts/header"
+        = render 'layouts/header'
         .row
-            = render "layouts/onelevel_menu"
+            = render 'layouts/onelevel_menu'
         - if @current_cart.positions.count > 0
             .row#make_order
                 - unless flash[:notice].nil?
@@ -21,25 +21,25 @@
                                 %p.product_name= position.product.name
                             .col-xs-4.check_block
                                 %p
-                                    = link_to check_box_tag("beauty_#{position.id}", value = "1", checked = "#{position.beauty}".to_b), beauty_path(position), remote: true, method: :post
+                                    = link_to check_box_tag("beauty_#{position.id}", value = '1', checked = "#{position.beauty}".to_b), beauty_path(position), remote: true, method: :post
                                     - if position.beauty
-                                        = label_tag "beauty_#{position.id}", "красивая упаковка +300 руб.", class: 'checked'
+                                        = label_tag "beauty_#{position.id}", 'красивая упаковка +300 руб.', class: 'checked'
                                     - else
-                                        = label_tag "beauty_#{position.id}", "красивая упаковка +300 руб."
+                                        = label_tag "beauty_#{position.id}", 'красивая упаковка +300 руб.'
                                 %p
-                                    = link_to check_box_tag("green_#{position.id}", value = "1", checked = "#{position.green}".to_b), green_path(position), remote: true, method: :post
+                                    = link_to check_box_tag("green_#{position.id}", value = '1', checked = "#{position.green}".to_b), green_path(position), remote: true, method: :post
                                     - if position.green
-                                        = label_tag "green_#{position.id}", "добавить зелени +300 руб.", class: 'checked'
+                                        = label_tag "green_#{position.id}", 'добавить зелени +300 руб.', class: 'checked'
                                     - else
-                                        = label_tag "green_#{position.id}", "добавить зелени +300 руб."
+                                        = label_tag "green_#{position.id}", 'добавить зелени +300 руб.'
                             .col-xs-1.count{id: "count_#{position.id}"}
                                 %p= position.count
-                                #plus= button_to "", plus_path(position), class: "button_up", remote: true
-                                #minus= button_to "", minus_path(position), class: "button_down", remote: true\
+                                #plus= button_to '', plus_path(position), class: 'button_up', remote: true
+                                #minus= button_to '', minus_path(position), class: 'button_down', remote: true
                             .col-xs-1.summ{id: "summ_#{position.id}"}
                                 %p= "#{position.summ} руб."
                             .col-xs-1.delete
-                                %p= button_to "", positions_destroy_path(position_id: position.id), class: "button_delete", method: :delete
+                                %p= button_to '', positions_destroy_path(position_id: position.id), class: 'button_delete', method: :delete
             .row
                 .col-xs-12#total_summ
                     %p= "Итого #{@current_cart.summ} руб."
@@ -62,7 +62,7 @@
                         .col-xs-4
                             = f.input :phone, label: 'Телефон', placeholder: '+79000000000'
                         .col-xs-4
-                            = f.button :submit, class: "btn btn-success", value: 'Продолжить оформление'
+                            = f.button :submit, class: 'btn btn-success', value: 'Продолжить оформление'
             = render 'layouts/buy_with_block'
         - else
             .row

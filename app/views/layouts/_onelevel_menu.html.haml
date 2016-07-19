@@ -3,8 +3,8 @@
         - @menus.each do |menu|
             %li
                 .color_block
-                    = link_to (image_tag "#{menu.image}", class: 'img-responsive'), shop_category_path(menu.link)
-                = link_to "#{menu.name}", shop_category_path(menu.link), class: 'link_black'
+                    = link_to (image_tag menu.image, class: 'img-responsive'), shop_category_path(menu.link)
+                = link_to menu.name, shop_category_path(menu.link), class: 'link_black'
         %li
             .color_block
                 = link_to (image_tag 'menu-garden.png', class: 'img-responsive'), tomats_path

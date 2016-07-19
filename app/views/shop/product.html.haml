@@ -1,9 +1,9 @@
 - provide(:title, 'Product')
 %body.product
     .container
-        = render "layouts/header"
+        = render 'layouts/header'
         .row
-            = render "layouts/twolevel_menu"
+            = render 'layouts/twolevel_menu'
         .row.caption
             .col-xs-6
                 %h3= @product.name
@@ -13,9 +13,9 @@
                 %p= @product.caption
                 %p
                     - if @product.availability
-                        %span.have= "есть в наличие"
+                        %span.have= 'есть в наличие'
                     - else
-                        %span.havenot= "нет в наличие"
+                        %span.havenot= 'нет в наличие'
             .col-xs-6.product_block
                 - if @product.image.blank?
                     = image_tag 'empty-flower.png', class: 'img-responsive'

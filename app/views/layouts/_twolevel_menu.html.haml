@@ -5,9 +5,9 @@
                 %li.tomato= link_to image_tag('tomato.png', class: 'image-responsive'), '', class: 'link_black'
             - else
                 - if menu_main == @active
-                    %li.active= link_to "#{menu_main.name}", shop_category_path(menu_main.link), class: 'link_black'
+                    %li.active= link_to menu_main.name, shop_category_path(menu_main.link), class: 'link_black'
                 - else
-                    %li= link_to "#{menu_main.name}", shop_category_path(menu_main.link), class: 'link_black'
+                    %li= link_to menu_main.name, shop_category_path(menu_main.link), class: 'link_black'
     - if @active.lowers.count > 0
         %ul.menus#second_level
             - @active.lowers.each do |menu_sub|
@@ -16,4 +16,4 @@
                         = link_to (image_tag 'empty-bouquet.png', class: 'img-responsive color_block'), sub_shop_category_path(@active.link, menu_sub.link)
                     - else
                         = link_to (image_tag menu_sub.image.medium, class: 'img-responsive color_block'), sub_shop_category_path(@active.link, menu_sub.link)
-                    = link_to "#{menu_sub.name}", sub_shop_category_path(@active.link, menu_sub.link), class: 'link_black'
+                    = link_to menu_sub.name, sub_shop_category_path(@active.link, menu_sub.link), class: 'link_black'
