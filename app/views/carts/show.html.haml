@@ -6,6 +6,8 @@
             = render "layouts/onelevel_menu"
         - if @current_cart.positions.count > 0
             .row#make_order
+                - unless flash[:notice].nil?
+                    %p.errors= flash[:notice]
                 %h3 Оформление заказа
                 .col-xs-12
                     - @current_cart.positions.order(id: :asc).each do |position|

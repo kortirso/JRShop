@@ -513,6 +513,14 @@ footer {
     padding: 50px 20px 50px 50px;
     border-bottom: 2px solid #fbe015;
 
+    .errors {
+        font-size: 20px;
+        color: #FFF;
+        display: inline-block;
+        background: red;
+        padding: 5px;
+    }
+
     .col-xs-12 {
         padding: 0;
     }
