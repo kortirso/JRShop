@@ -18,6 +18,7 @@ gem 'rmagick', '2.15.4'
 gem 'kaminari'
 gem 'wannabe_bool'
 gem 'rubykassa'
+gem 'react-rails', '>=1.8.0'
 
 group :development, :test do
     gem 'spring'
