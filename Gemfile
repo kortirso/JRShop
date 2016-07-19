@@ -1,14 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.5'
+gem 'rails', '4.2.7'
 gem 'pg'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
-gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0', group: :doc
-gem 'therubyracer'
+gem 'therubyracer', platforms: :ruby
 
 gem 'devise'
 gem 'figaro'
@@ -23,18 +20,22 @@ gem 'wannabe_bool'
 gem 'rubykassa'
 
 group :development, :test do
-    gem 'byebug'
-    gem 'web-console', '~> 2.0'
     gem 'spring'
     gem 'rspec-rails'
     gem 'factory_girl_rails'
     gem 'capybara'
-    gem 'shoulda-matchers'
     gem 'database_cleaner'
     gem 'capybara-webkit'
 end
 
-gem 'capistrano', '~> 3.4.0'
-gem 'capistrano-bundler', '~> 1.1.2'
-gem 'capistrano-rails', '~> 1.1.1'
-gem 'capistrano-rvm', github: "capistrano/rvm"
+group :development do
+    gem 'capistrano', require: false
+    gem 'capistrano-bundler', require: false
+    gem 'capistrano-rails', require: false
+    gem 'capistrano-rvm', require: false
+end
+
+group :test do
+    gem 'shoulda-matchers'
+    gem 'json_spec'
+end

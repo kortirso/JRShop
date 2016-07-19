@@ -1,6 +1,6 @@
 default: &default
   adapter: postgresql
-  pool: 5
+  pool: 20
   port: 5432
   username: <%= ENV['SHOP_DATABASE_USERNAME'] %>
   password: <%= ENV['SHOP_DATABASE_PASSWORD'] %>
