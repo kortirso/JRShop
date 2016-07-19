@@ -18,7 +18,7 @@
                                 - if slide.image.blank?
                                     = image_tag 'empty-flower.png', class: 'img-responsive'
                                 - else
-                                    = image_tag slide.image.small, class: 'img-responsive', alt: slide.name
+                                    = image_tag slide.image.medium, class: 'img-responsive', alt: slide.name
                                 .container.active
                                     .carousel-caption
                                         %p= link_to slide.name, shop_product_path(slide.link)

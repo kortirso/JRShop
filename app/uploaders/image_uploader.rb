@@ -8,15 +8,15 @@ class ImageUploader < CarrierWave::Uploader::Base
     end
 
     version :normal do
-        process :resize_to_fit => [450, 450]
+        process resize_to_fill: [450, 450]
     end
 
     version :medium do
-        process :resize_to_fit => [250, 250]
+        process resize_to_fill: [250, 250]
     end
 
     version :small do
-        process :resize_to_fit => [150, 150]
+        process resize_to_fill: [150, 150]
     end
 
     def extension_white_list
