@@ -5,6 +5,9 @@ class Cart < ActiveRecord::Base
 
     validates :summ, numericality: true
 
+    BEAUTY_PRICE = 300
+    GREEN_PRICE = 300
+
     def add_product(product_id)
         current_product = positions.find_by(product_id: product_id)
         current_product ? current_product.update(count: current_product.count + 1) : current_product = positions.create(product_id: product_id)
@@ -15,10 +18,9 @@ class Cart < ActiveRecord::Base
         self.summ = 0
         positions.each do |position|
             base_price = position.product.price
-            base_price += 300 if position.beauty == true
-            base_price += 300 if position.green == true
-            position.summ = position.count * base_price
-            position.save
+            base_price += BEAUTY_PRICE if position.beauty
+            base_price += GREEN_PRICE if position.green
+            position.update(summ: position.count * base_price)
             self.summ += position.summ
         end
         save
