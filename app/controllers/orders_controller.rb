@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
             @menus = Menu.main
             render :show
         else
-            render "layouts/403", status: 404
+            render "layouts/404", status: 404
         end
     end
 

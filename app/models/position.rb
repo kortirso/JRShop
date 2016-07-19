@@ -27,6 +27,11 @@ class Position < ActiveRecord::Base
         self.reload
     end
 
+    def removing
+        self.destroy
+        self.cart.calc_summ
+    end
+
     private
     def get_start_summ
         self.update(summ: self.product.price)
